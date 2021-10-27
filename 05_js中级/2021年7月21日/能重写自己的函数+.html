@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test(){    // test-->#454
+              alert("test函数");
+              test=function(){  // 匿名函数-->#4575
+                  alert("新的函数")
+              }  
+        }
+        test(); // test--->454
+        test(); // test--->4575
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

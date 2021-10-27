@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 回调函数1
+        function a(){    // a-->#1211
+            return 1;
+        }
+        // 回调函数2
+        function b(){    // b-->#1545
+            return 2;
+        }
+        function test(x,y){   // test-->#4454
+            return x()+y();
+        }
+        alert(test(a,b));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

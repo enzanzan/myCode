@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/public.js"></script>
+    <script src="js/mock.js"></script>
+    <script src="js/data1.js"></script>
+    <script>
+        $.addEvent(window, "load", function () {
+            var div1 = document.getElementById("div1");
+            var bt1 = document.getElementById("bt1");
+            $.addEvent(bt1, "click", function () {
+                div1.className = "loading";
+                div1.innerText = "";
+                // ajax
+                $.ajax({
+                    url: "chuli.php",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        data = data.data;
+                        var str = "<ul>";
+                        for (var i = 0; i < data.length; i++) {
+
+                            str += "<li>学号:" + data[i].sno
+                                + " 姓名:" + data[i].sname
+                                + " 年龄:" + data[i].sage
+                                + " 性别:" + data[i].sgender
+                                + " 系别:" + data[i].sdept
+                                + "</li>";
+
+                        }
+                        div1.className = "";
+                        div1.innerHTML = str + "</ul>";
+                    }
+                });
+            });
+        })
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <input type="button" id="bt1" value="点击获取json">
+</body>
+
+</html>

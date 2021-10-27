@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Human(name,age,sex){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+        }
+        Human.prototype.eat=function(){
+            alert("吃出健康来");
+        }
+        Human.prototype.jump=function(){
+            alert("跳起来");
+        }
+        Human.prototype.run=function(){
+            alert("跑起来");
+        }
+        
+        // 继承属性和添加自身属性、方法
+        function Student(name,age,sex,sno){
+            Human.call(this,name,age,sex);
+            this.sno=sno;
+            this.study=function(){
+                alert("好好学习");
+            }
+        }
+        // 继承方法
+        for(var i in Human.prototype){
+            Student.prototype=Human.prototype;
+        }
+        // 实例化对象
+        var s1=new Student("tom",19,"男","1001");
+        s1.eat();
+        s1.run();
+        s1.jump();
+        s1.study();
+        console.log(s1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

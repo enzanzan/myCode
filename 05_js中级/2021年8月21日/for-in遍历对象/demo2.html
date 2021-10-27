@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Student(){}
+        Student.prototype.study=function(){
+            alert("持之以恒");
+        }
+        Student.prototype.readBook=function(){
+            alert("全身心投入");
+        }
+        console.dir(Student);
+          // Student.prototype {study: ƒ, readBook: ƒ, constructor: ƒ}
+        for(var i in Student.prototype){
+            console.log(i,Student.prototype[i]);
+        }
+            //非枚举属性和枚举属性
+            //非枚举属性--可以使用for-in进行遍历的属性
+            //枚举属性--不可以使用for-in进行遍历的属性--constructor
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

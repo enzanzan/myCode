@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name,sex,age,qq){
+            // 工厂模式添加属性
+            this.name=name;
+            this.sex=sex;
+            this.age=age;
+            this.qq=qq;
+        }
+        // 原型模式添加方法
+        Person.prototype.showName=function(){
+            alert("姓名:"+this.name+"\n"+"性别:"+this.sex+"\n"+"年龄:"+this.age+"\n"+"QQ:"+this.qq);
+        }
+        // 通过构造器函数实例化对象
+        var P1=new Person("铭铭","男",20,"770968943");
+        var P2=new Person("赞赞","女",19,"745855589");
+        P1.showName();
+        P2.showName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

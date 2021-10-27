@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color:#f00;
+            font-size: 12px;
+        }
+        .green{
+            color:#009900;
+        }
+        .red{
+            color:#f00;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            // 获得email
+            var email=document.getElementById("email");
+            var tips=document.getElementById("tips");
+            // 正则
+            var reg=/\w+([-+.]\w+)*@\w+([-.]\w)*\.\w+([-.]\w+)*/;
+            // 失去焦点时验证
+            email.onchange=function(){
+                // 验证内容
+                if(this.value!=""){
+                if(reg.test(this.value)){
+                    tips.innerText="格式正确";
+                    tips.className="green"; 
+                }else{
+                    tips.innerText="格式不正确";
+                }
+            }
+        }
+            email.onfocus=function(){
+                tips.innerText="*";
+                tips.className="red";
+            }
+        }
+    </script>
+</head>
+<body>
+    email:
+    <input type="text" id="email">
+    <span id="tips">*</span>
+</body>
+</html>

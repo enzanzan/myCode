@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生js数组过滤器jQuery</title>
+    <script src="js/jquery-1.11.2.js"></script>
+    <script>
+        var arr = ["语文", "数学", "历史", "地理"];
+        var newArr = $.grep(arr, function (value, index) {
+            console.log(index, value);
+            if (value == "历史") return false;
+            return true;
+        })
+        console.log("newArr", newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

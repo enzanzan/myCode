@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.11.2.js"></script>
+    <style>
+        div {
+            background-color: #ff0;
+            width: 100px;
+            height: 30px;
+            position: fixed;
+            left: 10px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("input:eq(0)").click(function () {
+                $("div").animate({ left: "+=400px" }, 2000)
+                    .animate({ top: "+=200px" }, 2000)
+                    .animate({ left: "-=400px" }, 2000)
+                    .animate({ top: "-=200px" }, 2000)
+            })
+            $("input:eq(1)").click(function () {
+                $("div").stop(false, false);
+            })
+            $("input:eq(2)").click(function () {
+                $("div").stop(true, true);
+            })
+            $("input:eq(3)").click(function () {
+                $("div").stop(true, false);
+            })
+            $("input:eq(4)").click(function () {
+                $("div").stop(false, true);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" value="动画">
+    <input type="button" value="stop(false,false)">
+    <input type="button" value="stop(true,true)">
+    <input type="button" value="stop(true,false)">
+    <input type="button" value="stop(false,true)">
+    <div>
+        测试哈哈
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件对象</title>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function () {
+            $("div").click(function (event) {
+                // 触发事件的时候，js解释器调用处理函数，自动创建事件对象并赋值给event
+                // event事件对象，存储的是当前事件相关的信息 
+                console.log(event)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>测试哈哈</div>
+</body>
+
+</html>

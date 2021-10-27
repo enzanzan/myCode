@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test(){
+            alert(this);    //更改成新创建的对象
+        }
+        new test();     //相当于 new Object() {} 然后调用test给新对象添加属性或方法
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

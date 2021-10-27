@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.获得当前日期对象
+        var myDate=new Date();
+        // 2.获得当前日期对象的时间戳
+        var ms=myDate.getTime();
+        console.log(ms);
+        // 3.获得10天后的时间戳
+        var day10ms=ms+10*24*3600*1000;
+        console.log(day10ms);
+        // 4.用10天后的时间戳设置日期对象
+        myDate.setTime(day10ms);
+        console.log(myDate.toLocaleString());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

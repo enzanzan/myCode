@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function lj(start,end){
+            var sum=0;
+            for(var i=start;i<=end;i++){
+                sum=sum+i;
+            }
+            return sum;
+        }
+        // 1-10累加
+        var a=lj(1,10);
+        document.write(a+"<br>");
+        // 100-999累加
+        var b=lj(100,999);
+        document.write(b+"<br>");
+        // 1000-9999累加
+        var c=lj(1000,9999);
+        document.write(c);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

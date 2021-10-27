@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内绑定事件</title>
+    <script src="js/addEvent.js"></script>
+    <script>
+        function tips1(){
+            alert("新的一天！");
+        }
+        function tips2(){
+            alert("也要元气满满！");
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" onclick="tips1();tips2();">
+        点我试试
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+            text-align: center;
+        }
+        #container{
+            border:2px solid #ccc;
+            position:relative;
+            width: 600px;
+            top:30px;
+            margin:0px auto;
+        }
+        img{
+            vertical-align: top;
+        }
+        .focus1{
+            position: absolute;
+            top:350px;
+            left:230px;
+        }
+        .s1{
+            background: url(images/dotActive.png) no-repeat;
+        }
+        .span{
+            display: inline-block;
+            _display:block;
+            _float:left;
+            width:16px;
+            height: 16px;
+            _overflow:hidden;
+            background: url(images/dot.png) no-repeat;
+            margin-left:10px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            // 封装一个获取DOM对象的函数
+            var $=function(id){
+                return document.getElementById(id);
+            }
+            // var container
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="images">
+            <img src="images/1.jpg" alt="">
+        </div>
+        <div class="focus1">
+            <span class="s1">1</span>
+            <span class="s2"></span>
+            <span class="s3"></span>
+            <span class="s4"></span>
+            <span class="s5"></span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../js/addEvent.js"></script>
+<script>
+    addEvent(window, "load", function () {
+        var form = document.getElementById("form");
+        var t1 = document.getElementById("t1");
+        addEvent(form, "submit", function (e) {
+            alert("你触发了submit事件");
+            var e = e || window.event;
+            if (t1.value == "") {
+                alert("用户名不能为空！");
+                if (window.addEventListener) {
+                    e.preventDefault();
+                } else {
+                    e.returnValue = false;
+                }
+            }
+        })
+    })
+</script>
+
+<body>
+    <form action="aa.html" id="form">
+        用户名:
+        <input type="text" id="t1" name="t1"><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>终止委派</title>
+    <style>
+        p {
+            background-color: #090;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../js/jquery-1.6.4.min.js"></script>
+    <script>
+        $(function () {
+            // 监控DOM结构变化
+            // 给最后一个p委派click事件
+            $("p:last").live("click", function () {
+                alert("你触发了click事件");
+            })
+
+            $("input:first").click(function () {
+                $("body").append("<p>我是帅哥</p>")
+            })
+            $("input:last").click(function () {
+                // 终止委派
+                $("p:last").die()
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+<input type="button" value="添加p">
+<input type="button" value="终止委派">
+<p>好好学习</p>
+
+</html>

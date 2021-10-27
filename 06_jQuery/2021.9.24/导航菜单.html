@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航菜单</title>
+    <script src="js/jquery-1.11.2.js"></script>
+    <style>
+        body,
+        h3,
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            background-color: #09f;
+            width: 200px;
+            border: 1px solid #90f;
+            float: left;
+            margin-right: 10px;
+            color: #Fff;
+        }
+
+        h3 {
+            background-color: #09f;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            display: none;
+        }
+
+
+        div.active {
+            background-color: #ff0;
+            color: #404040;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("div").click(function () {
+                // 当前点击的div添加active类
+                $(this).addClass("active")
+                    // 切换到当前div的儿子对象中的ul
+                    .children("ul").show()
+                    // 切换到前一个对象--当前点击的div
+                    .end()
+                    // 切换到其他两个div
+                    .siblings()
+                    // 其他两个div,先移除高亮
+                    .removeClass("active")
+                    // 切换到其他两个div的子元素ul
+                    .children("ul")
+                    // 隐藏
+                    .hide();
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <h3>导航1</h3>
+        <ul>
+            <li>内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+        </ul>
+    </div>
+    <div>
+        <h3>导航2</h3>
+        <ul>
+            <li>内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+        </ul>
+    </div>
+    <div>
+        <h3>导航3</h3>
+        <ul>
+            <li>内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+        </ul>
+    </div>
+</body>
+
+</html>

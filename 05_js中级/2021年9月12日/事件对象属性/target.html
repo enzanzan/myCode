@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>target</title>
+    <style>
+        #div1{
+            background-color: #09f;
+            width: 100px;
+            height: 200px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../js/addEvent.js"></script>
+    <script>
+        addEvent(window,"load",function(){
+            var div1=document.getElementById("div1");
+            addEvent(div1,"click",function(e){
+                var e = e || window.event;
+                if(window.addEventListener){
+                    console.log(this===e.target);
+                    console.log("target",e.target);
+                }else{
+                    console.log(this===e.srcElement);
+                    console.log("srcElement",e.srcElement);
+                }
+            })
+        })
+    </script>
+        
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

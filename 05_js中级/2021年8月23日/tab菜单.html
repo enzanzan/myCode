@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            border:1px solid #f00;
+            width: 200px;
+            height: 260px;
+            position: relative;
+        }
+        input{
+            width:60px;
+        }
+        input#one{
+            position: absolute;
+            left:0px;
+            top: 0px;
+        }
+        input#two{
+            position: absolute;
+            left:65px;
+            top: 0px;
+        }
+        input#three{
+            position: absolute;
+            left:130px;
+            top: 0px;
+        }
+        #div1  div{
+            background-color: #ff0;
+            margin-top:30px;
+            height: 200px;
+            display: none;
+        }
+        /* 高亮类 */
+        .highlight{
+            background-color: #09f;
+            color:#fff;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            var inputs=div1.getElementsByTagName("input");
+            var divs=div1.getElementsByTagName("div");         
+        //给input绑定循环事件
+        for(var i=0;i<inputs.length;i++){ 
+            inputs[i].onclick=function(){
+            // 1.清除所有按钮的class类
+            // 隐藏所有div
+            for(var j=0;j<inputs.length;j++){
+                inputs[j].className="";
+                divs[j].style.display="none";
+            }
+            // 当前点击的按钮使用highlight类
+            this.className="highlight";
+            // 兼容
+            if(window.addEventListener){
+                //IE9+
+                this.nextElementSibling.style.display="block";
+            }else{
+                //IE6/7/8
+                this.nextSibling.nextSibling.style.display="block";
+            }
+            console.log(this);
+        }
+    }
+}
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="button" value="导航1" id="one">
+        <div style="display: block;">内容1</div>
+        <input type="button" value="导航2" id="two">
+        <div>内容2</div>
+        <input type="button" value="导航3" id="three">
+        <div>内容3</div>
+    </div>
+</body>
+</html>

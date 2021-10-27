@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历</title>
+    <style>
+        div {
+            background-color: #09f;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function () {
+            // 写法一
+            // $("div").each(function (index) {
+            //     if (index != 2 && index < 5) {
+            //         $(this).css({ border: "2px solid #f00" });
+            //     }
+            // })
+
+            $("div").each(function (index) {
+                // 索引到2的时候不往下执行，直接进入下次循环
+                if (index == 2) return true;
+                // 索引到5的时候跳出循环--结束
+                if (index == 5) return false;
+                $(this).css({ border: "2px solid #f00" });
+
+            })
+
+            // 写法二--如果每个用的都一样
+            // jQuery隐式迭代
+            // $("div").css({ border: "1px solid #f00" });
+        })
+    </script>
+</head>
+
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div>div6</div>
+</body>
+
+</html>

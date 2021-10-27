@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var input=document.querySelector("input");
+            // onkedown 按键按下那一瞬间触发，字还没有显示到文本框的时候触发
+            // 获得长度少1 
+            input.onkeydown=function(){
+                console.log("触发了onkeydown");
+                console.log(this.value.length);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>

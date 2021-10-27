@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机验证码</title>
+    <script>
+        var str="ABCDEFGHIJKLMNOPQRST0123456789";
+        var yzm="";
+        var p;
+        for(var i=1;i<=4;i++){
+            // 生成随机位置，每次循环生成一个随机位置
+            p=Math.ceil(Math.random()*100)%30;
+            yzm=yzm+str.substr(p,1);
+        }
+        document.write('<font size="4" color="blue">'+yzm+'</font>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

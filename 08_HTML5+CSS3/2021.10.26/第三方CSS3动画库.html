@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三方CSS3动画库</title>
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <h1 id="dh" class="animate__animated">An animated element</h1>
+    <input type="button" id="bt1" value="执行动画">
+</body>
+<script>
+    var dh = document.getElementById("dh");
+    var bt1 = document.getElementById("bt1");
+    bt1.onclick = function () {
+        dh.classList.add("animate__fadeInRightBig");
+    }
+</script>
+
+</html>

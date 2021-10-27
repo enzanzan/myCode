@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="get.html" name="form1" method="get">
+      账号:
+    <input type="text" name="d1" size="20" maxlength="15" value="">
+    <br>
+      密码:
+    <input type="password" name="psd" size="20" maxlength="15">
+    <br>
+    <!-- 普通按钮 -->
+    <input type="button" name="bt1" value="按钮1">
+    <input type="button" name="bt2" value="按钮2">
+    <br>
+    <!-- 单选按钮 -->
+    性别:
+    <input type="radio" name="sex" value="0">男
+    <input type="radio" name="sex" value="1">女
+    <br>
+    科目:
+    <input type="checkbox" name="kemu" value="yw">语文
+    <input type="checkbox" name="kemu" value="sx">数学
+    <input type="checkbox" name="kemu" value="yy">英语
+    <input type="checkbox" name="kemu" value="sw">生物
+    <input type="checkbox" name="kemu" value="hx">化学
+    <input type="checkbox" name="kemu" value="wl">物理
+    <br>
+    <!--文件域-->
+    文件域:
+    <input type="file" name="ufile" style="height:25px;">
+    <br>
+    <!-- 单选下拉列表 -->
+    就业城市:
+    <select name="city">
+      <option value="hz">杭州</option>
+      <option value="bj" selected>北京</option>
+      <option value="sh">上海</option>
+      <option value="gz">广州</option>
+      <option value="sz">深圳</option>
+      <option value="tj">天津</option>
+    </select>
+    <br>
+    <!-- 多选列表 -->
+    就业城市选择:
+    <select name="city" size="6" multiple>
+        <option value="hz" selected>杭州</option>
+        <option value="bj">北京</option>
+        <option value="sh">上海</option>
+        <option value="gz">广州</option>
+        <option value="sz">深圳</option>
+        <option value="tj">天津</option>
+      </select>
+    <br>
+    <!-- 文本域 -->
+        备注:
+        <textarea name="txt1" cols="35" rows="10"></textarea>
+    <br>
+    <!-- 图像域 -->
+        <input type="image" src="img/button.png">
+    <br>
+    <!-- 重置按钮 -->
+    <input type="reset" name="resrt" value="重置">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- 登录注册按钮 -->
+    <input type="submit" name="st1" value="登录">
+    <input type="submit" name="st2" value="注册">
+
+    </form>
+</body>
+</html>

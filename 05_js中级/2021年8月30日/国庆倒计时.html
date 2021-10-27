@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+            background-color: lightblue;
+        }
+        h3{
+            font-size: 70px;
+            font-weight: normal;
+            margin:100px 0px 0px 100px;
+        }
+        #div1{
+            margin:30px 0px 0px 500px;
+            font-size: 50px;
+            color:#ff0;
+        }
+        span{
+            font-size: 20px;
+            color:black;
+        }
+    </style>
+    <script src="js/addEvent.js"></script>
+    <script>
+        addEvent(window, "load", function () {
+            var div1 = document.getElementById("div1");
+            function Countdown() {
+                // 创建日期对象
+                var myDate = new Date();
+                // 获取当前日期对象的时间戳
+                var ms = myDate.getTime();
+                // 设置目标时间
+                var oDate = new Date("2021/10/1 00:00:00");
+                // 获取目标时间的时间戳
+                var oDatems = oDate.getTime();
+                // 设置当前时间和目标时间相距的秒数
+                var sceond = (oDatems - ms) / 1000;
+                // 根据相距的秒数获得剩余的天数
+                var d = Math.floor(sceond / (24 * 3600));
+                // 获取剩余的秒数
+                sceond = sceond % (24*3600);
+                // 根据剩余的秒数获得剩余的小时数
+                var h = Math.floor(sceond / 3600);
+                // 重新获取剩余的秒数
+                sceond = sceond % (3600);
+                // 根据剩余的秒数获得剩余的分钟数
+                var m = Math.floor(sceond / 60);
+                // 重新获取剩余的秒数
+                sceond = Math.floor(sceond % 60);
+                var str = d + "<span>天</span>" +h + "<span>小时</span>" +m + "<span>分钟</span>" + sceond + "<span>秒</span>";
+                div1.innerHTML = str;
+            }
+            Countdown();
+            setInterval(Countdown,1000);
+        })
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h3>距离国庆还有:</h3>
+        <div id="div1"></div>
+    </div>
+</body>
+</html>

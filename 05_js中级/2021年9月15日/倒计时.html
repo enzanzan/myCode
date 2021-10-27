@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <script src="js/addEvent.js"></script>
+    <script>
+        addEvent(window, "load", function () {
+            var div1 = document.getElementById("div1");
+            function Countdown() {
+                var myDate = new Date();
+                var ms = myDate.getTime();
+                var oDate = new Date("2021/10/1 00:00:00");
+                var oDatems = oDate.getTime();
+                var sceond = (oDatems - ms) / 1000;
+                var date = Math.floor(sceond / (3600 * 24));
+                var hours = Math.floor((sceond / 3600) % 60);
+                var minutes = Math.floor((sceond / 60) % 60);
+                sceond = Math.floor(sceond % 60);
+                var str = date + "天" + hours + "时" + minutes + "分" + sceond + "秒";
+                div1.innerText = str;
+            }
+            Countdown();
+            setInterval(Countdown, 1000);
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

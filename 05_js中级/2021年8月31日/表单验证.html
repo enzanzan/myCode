@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color:#f00;
+            font-size: 12px;
+        }
+    </style>
+    <script src="js/addEvent.js"></script>
+    <script>
+        addEvent(window,"load",function(){
+            // 通过id值获取DOM对象过程，封装成一个函数
+            var $=function(id){
+                return document.getElementById(id);
+            }
+            // 获取表单
+            var form=$("form");
+            // 获取用户名
+            var userName=$("userName");
+            var userNameTips=$("userNameTips");
+            // 获取密码
+            var pwd1=$("pwd1");
+            var pwd2=$("pwd2");
+            // 
+
+
+            // 获取性别
+            var sex=document.getElementsByName("sex");
+            var sexTips=$("sexTips");
+            // 获取城市
+            var city=$("city");
+            var cityTips=$("cityTips");
+
+            // 给表单验证绑定事件--当点击提交按钮的时候触发
+            addEvent(form,"submit",function(event){
+                // 1.用户名为空报错
+                if(userName.value==""){
+                    userNameTips.innerText="用户名不能为空";
+                    // 阻止默认跳转动作
+                    event.preventDefault();
+                }
+                // 2.密码为空报错
+                if(pwd1.value==""){
+                    pwd1Tips.innerText="密码不能为空";
+                    event.preventDefault();
+                }
+                // 3.性别没选报错
+                if(!(sex[0].checked || sex[1].checked)){
+                    sexTips.innerText="用户名不能为空";
+                    event.preventDefault();
+                }
+                // 4.城市没选报错
+                if(city.options[0].selected){
+                    cityTips.innerText="请选择就业城市";
+                    event.preventDefault();
+                }
+            })
+            // 1.用户名获取焦点后清除错误信息
+            addEvent(userName,"focus",function(){
+                userNameTips.innerText="*";
+            })
+            // 2.密码获取焦点后清除错误信息
+            addEvent(pwd1,"focus",function(){
+                pwd1Tips.innerText="*";
+            })
+            // 3.选择性别后清除错误信息
+            addEvent(sex[0]=sex[1],"change",function(){
+                sexTips.innerText="*";
+            })
+            // 4.选择城市后清除错误信息
+            addEvent(city,"change",function(){
+                cityTips.innerText="*";
+            })
+            // 1.用户名少于6个字符报错--失去焦点
+            addEvent(userName,"blur",function(){
+                if(userName.value.length<6){
+                    userNameTips.innerText="用户名不能少于6个字符";
+            }
+            })
+            // 2.两次密码不相等报错--失去焦点
+            addEvent(pwd2,"blur",function(){
+                if(pwd1.value!=pwd2.value){
+                    pwd2Tips.innerText="两次密码不相等";
+                    pwd2.value="";
+                }
+            })
+            // 确认密码获得焦点之后清除错误信息
+            addEvent(pwd2,"focus",function(){
+                pwd2Tips.innerText="*";
+            })
+        })
+    </script>
+</head>
+<body>
+    <form action="a.html" id="form">
+        用户名:
+        <input type="text" id="userName">
+        <span id="userNameTips">*</span>
+        <br>
+        密码:
+        <input type="password" id="pwd1">
+        <span id="pwd1Tips">*</span>
+        <br>
+        确认密码:
+        <input type="password" id="pwd2">
+        <span id="pwd2Tips">*</span>
+        <br>
+        性别:
+        <input type="radio" name="sex" value="0">男
+        <input type="radio" name="sex" value="1">女
+        <span id="sexTips">*</span>
+        <br>
+        城市:
+        <select  id="city">
+            <option selected>请选择城市</option>
+            <option value="hz">杭州</option>
+            <option value="bj">北京</option>
+            <option value="sh">上海</option>
+        </select>
+            <span id="cityTips">*</span>
+        <br>
+        <input type="submit" id="submit" value="提交">
+    </form>
+</body>
+</html>

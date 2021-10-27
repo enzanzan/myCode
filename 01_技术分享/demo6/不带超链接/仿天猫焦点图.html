@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>焦点图</title>
+	<style>
+		#focusimg {
+			border: 1px solid #090;
+			position: relative;
+			width: 600px;
+			left: 50%;
+			margin-left: -300px;
+		}
+
+		#imgs {
+			text-align: center;
+		}
+
+		#imgs img {
+			vertical-align: top;
+		}
+
+		#focus1 {
+			text-align: center;
+			position: absolute;
+			top: 350px;
+			left: 50%;
+
+		}
+
+		#focus1 span {
+			display: inline-block;
+			_display: block;
+			_float: left;
+			width: 16px;
+			height: 16px;
+			_overflow: hidden;
+			background: url(images/dot.png) no-repeat;
+			margin-right: 10px;
+		}
+	</style>
+	<!--IE6支持png背景透明-->
+	<!--[if IE 6]>
+<script type="text/javascript" src="js/iepng.js"></script> 
+<script type="text/javascript">
+	    	EvPNG.fix('img,.s1,.s2,.s3,.s4,.s5');
+	    </script>
+<![endif]-->
+
+	<script>
+		window.onload = function () {
+			var $ = function (_id) { return document.getElementById(_id); };
+			var focusimg = $("focusimg");
+			var imgs = $("imgs");
+			var focus1 = $("focus1");
+			var spans = focus1.getElementsByTagName("span");
+			var currentIndex;//点击焦点后，当前索引值，默认是undefined
+
+			//自动轮播图
+			//点击焦点后，切换到当前焦点，并继续轮播
+			var k = 1;
+			setInterval(function () {
+				for (var j = 0; j < spans.length; j++) {
+					spans[j].style.background = "url(images/dot.png)";
+				}
+				if (currentIndex != undefined) {
+					k = currentIndex;
+					currentIndex = undefined;
+				}
+				spans[k].style.background = "url(images/dotActive.png)";
+				if (-[1,]) {
+					imgs.firstElementChild.src = "images/" + (k + 1) + ".jpg";
+				} else {
+					imgs.firstChild.src = "images/" + (k + 1) + ".jpg";
+				}
+
+				if (k >= 4) {
+					k = -1;
+				}
+				k++;
+			}, 3000);
+
+			//实现点击换焦点及相应图片
+			for (var i = 0; i < spans.length; i++) {
+				spans[i].index = i;
+				spans[i].onclick = function () {
+					for (var j = 0; j < spans.length; j++) {
+						spans[j].style.background = "url(images/dot.png)";
+					}
+					this.style.background = "url(images/dotActive.png)";
+					currentIndex = this.index;
+					if (-[1,]) {
+						imgs.firstElementChild.src = "images/" + (this.index + 1) + ".jpg";
+					} else {
+						imgs.firstChild.src = "images/" + (this.index + 1) + ".jpg";
+					}
+
+				};
+			}
+		};
+	</script>
+
+</head>
+
+<body>
+
+	<div id="focusimg">
+		<div id="imgs">
+			<img src="images/1.jpg">
+		</div>
+		<div id="focus1">
+			<span class="s1" style="background:url(images/dotActive.png);"></span>
+			<span class="s2"></span>
+			<span class="s3"></span>
+			<span class="s4"></span>
+			<span class="s5"></span>
+		</div>
+	</div>
+</body>
+
+</html>

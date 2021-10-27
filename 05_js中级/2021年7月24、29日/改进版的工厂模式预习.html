@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Student(name,age,sex){
+            // 原料
+            // var obj=new Object();
+            // obj {}
+            this.name=name;
+            // obj{name:"tom"}
+            this.age=age;
+            // obj{name:"tom",age:19}
+            this.sex=sex;
+            // obj{name:"tom",age:19,sex:"男"}
+            this.study=function(){alert("自律 用心");}
+            // obj{name:"tom",age:19,sex:"男",study:function(){alert("自律 用心");}}
+            // return obj;
+        }
+        // 调用构造器函数--使用类创建对象
+        var s1=new Student("tom",19,"男");
+            // new --> new Object()-->
+            // 然后去调用后面的构造器函数，给新对象添加属性和方法
+        console.log(s1);
+        var s2=new Student("jarry",21,"男");
+        console.log(s2);
+        console.log(s1.study===s2.study);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

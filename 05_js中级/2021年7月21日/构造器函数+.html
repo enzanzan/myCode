@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 构造器函数
+        // pascal命名法--给类名和构造器函数用
+        function Human(name,age,sex){
+            // 三个属性
+            // 一开始对象长这样{}  this 代表新new出来的对象
+            this.name=name;
+            // {name:"tom"};
+            this.age=age;
+            // {name:"tom",age=19};
+            this.sex=sex;
+            // {name:"tom",age=19,sex="男"};
+            // 一个方法
+            this.eat=function(){
+                alert("吃出健康来！");
+            }
+            // {name:"tom",age=19,sex="男",eat:function(){alert("吃出健康来！")}};
+        }
+        // 通过构造器函数创建对象
+        // 通过类实例化一个对象
+        var s1=new Human("tom",19,"男");
+                // new object()-->{}
+                // 之后调用构造器函数，向对象中添加属性和方法
+        console.dir(s1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

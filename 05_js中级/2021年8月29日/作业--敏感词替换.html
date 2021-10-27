@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: #f6f6f6;
+        }
+
+        #container {
+            text-align: center;
+            margin: 30px auto;
+            width: 800px;
+            height: 300px;
+        }
+
+        textarea {
+            resize: none;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-radius: 5px;
+        }
+
+        #bt1 {
+            font-size: 16px;
+            margin-left: 410px;
+        }
+    </style>
+    <script src="js/addEvent3.js"></script>
+    <script>
+        addEvent(window, "load", function () {
+            var t1 = document.getElementById("t1");
+            var s1 = document.getElementById("s1");
+            var tips = document.getElementById("tips");
+            var bt1 = document.getElementById("bt1");
+            var reg = /傻逼|你他妈|真他妈|操你妈|操他妈|日你妈|狗日的|操你大爷|妈逼|你麻痹|麻痹的|妈了个逼/g;
+            addEvent(t1, "input", function () {
+                if (this.value.length <= 40) {
+                    // s1.style.display="inline-block";
+                    tips.innerText = this.value.length;
+                } else {
+                    s1.style.display = "none";
+                    tips.innerText = "已经超出" + (this.value.length - 40);
+                }
+            })
+            addEvent(t1, "input", function () {
+                t1.value = t1.value.replace(reg, "**");
+            })
+            addEvent(bt1, "click", function () {
+                if (t1.value == "") {
+                    alert("请输入内容！");
+                } else {
+                    if (reg.test(t1.value)) {
+                        alert("包含敏感词，发表失败！");
+                    } else {
+                        alert("发表成功！");
+                        t1.value = "";
+                        tips.innerText = t1.value.length;
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <textarea id="t1" cols="80" rows="10"></textarea>
+        <span id="s1">已输入</span><span id="tips">0</span>字
+        <input type="button" id="bt1" value="发表">
+    </div>
+</body>
+
+</html>

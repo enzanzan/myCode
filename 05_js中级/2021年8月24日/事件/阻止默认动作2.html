@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var form1=document.getElementById("form1");
+            var userName=document.getElementById("userName");
+            form1.onsubmit=function(e){
+                if(userName.value== ""){
+                    alert("用户名为空");
+                    var e = e || window.event;
+                    if(window.addEventListener){
+                        e.preventDefault();
+                    }else{
+                        e.returnValue=flase;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="aa.html" id="form1">
+        文本框:
+        <input type="text" id="userName">
+        <br>
+        <input type="submit" name="" id="tj">
+    </form>   
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            // json从后台获取的数据
+            var json='{"status":"10001","msg":"ok","data":[{"id":"1","name":"tom","age":19,"sex":"男"},{"id":"2","name":"jarry","age":21,"sex":"男"},{"id":"3","name":"susan","age":20,"sex":"男"},{"id":"4","name":"赵四","age":21,"sex":"男"}]}';
+            // 将json字符串装换为js对象
+            var obj=JSON.parse(json);
+            console.log(obj);
+
+            // 遍历json字符串转换成js对象的数据
+            var str="<ul>";
+            for(var i in obj.data){
+                str+="<li>学号:"+obj.data[i].id
+                    +" 姓名:"+obj.data[i].name
+                    +" 年龄:"+obj.data[i].age
+                    +" 性别:"+obj.data[i].sex
+                    +"</li>";
+            }
+            div1.innerHTML=str+"</ul>";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</html>

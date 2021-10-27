@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻止默认动作</title>
+    <style>
+        #div1 {
+            background-color: #090;
+            width: 400px;
+            height: 400px;
+        }
+
+        #div2 {
+            background-color: #09f;
+            width: 300px;
+            height: 300px;
+        }
+
+        #div3 {
+            background-color: #ff0;
+            width: 200px;
+            height: 200px;
+        }
+
+        #div4 {
+            background-color: #f09;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="../js/jquery-1.11.2.js"></script>
+    <script>
+        $(function () {
+            $("div:eq(0)").click(function () {
+                alert("触发了div1的click事件");
+            })
+            $("div:eq(1)").click(function () {
+                alert("触发了div2的click事件");
+            })
+            $("div:eq(2)").click(function () {
+                alert("触发了div3的click事件");
+            })
+            $("div:eq(3)").click(function () {
+                alert("触发了div4的click事件");
+                // event.stopPropagation();
+                return false;
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        div1
+        <div id="div2">
+            div2
+            <div id="div3">
+                div3
+                <div id="div4">
+                    div4
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

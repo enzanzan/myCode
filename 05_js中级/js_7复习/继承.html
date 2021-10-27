@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承</title>
+    <script>
+        function Human(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        Human.prototype.showN = function () {
+            alert("姓名:" + this.name);
+        }
+        Human.prototype.showA = function () {
+            alert("年龄:" + this.age);
+        }
+        Human.prototype.showS = function () {
+            alert("性别:" + this.sex);
+        }
+        function Student(name, age, sex, qq) {
+            Human.call(this, name, age, sex);
+            this.qq = qq;
+            this.study = function () {
+                alert("持之以恒");
+            }
+        }
+        // 继承方法
+        for (var i in Human.prototype) {
+            Student.prototype = Human.prototype;
+        }
+        var s1 = new Student("tom", 19, "男", "123456");
+        s1.showN();
+        s1.showA();
+        s1.showS();
+        s1.study();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

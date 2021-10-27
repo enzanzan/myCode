@@ -1,0 +1,10 @@
+context.fillStyle  : 填充颜色	        最后调用:context.fill()
+context.stokeStyle : 描边颜色	        	     context.stroke()
+context.lineWith : 描边线的粗细
+context.beginPath : 开始绘制		     context.closePath()
+context.moveTo(数字,数字) : 将光标挪到指定位置
+context.lineTo(数字,数字) : 连线
+
+trabslate()  平移
+scale()  缩放
+rotate() 旋转

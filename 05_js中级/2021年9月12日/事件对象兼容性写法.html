@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件对象兼容性写法</title>
+    <script src="js/addEvent.js"></script>
+    <script>
+        addEvent(window,"load",function(){
+            var div1=document.getElementById("div1");
+            addEvent(div1,"click",function(){
+                var e = e || window.event;
+                console.log("e",e);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="div1">测试哈哈</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生js数组过滤器</title>
+    <script>
+        var arr = ["语文", "数学", "历史", "地理"];
+        // filter中匿名函数返回true,数据保留,false删除      
+        var newArr = arr.filter(function (value, index) {
+            console.log(index, value);
+            if (value == "历史") {
+                return false;
+            }
+            return true;
+        })
+        console.log("nweArr", newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

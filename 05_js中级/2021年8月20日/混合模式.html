@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //混合模式创建对象
+        function Student(name,age,sex){
+            //工厂模式添加属性
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+        }
+        //原型模式添加方法
+        // 之前 Student.prototype {constructor:f(){}}
+        //添加之后: Student.prototype {constructor:f(){},study:f(){}}
+                            //我们就把study叫做原型方法
+        Student.prototype.study=function(){
+            alert("持之以恒！");
+        }
+        //通过构造器函数/类-->实例化一个对象
+        var s1=new Student("tom",19,"男");
+        var s2=new Student("jarry",20,"男");
+        alert(s1.study===s2.study);//true
+        // s1.__proto__===Student.prototype
+        // s2.__proto__===Student.prototype
+        // s1.__proto__.study===s2.__proto__.study 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var t1=document.querySelector("#t1");
+            var bt1=document.querySelector("#bt1");
+            // onblur 失去焦点
+            // onfocus 获得焦点
+            t1.onfocus=function(){
+                console.log("触发了onfocus");
+            }
+            t1.onblur=function(){
+                console.log("触发了onblur");
+            }
+            bt1.onclick=function(){
+                // 模拟触发onfocus，相当于用户让文本框获得焦点
+                console.log(t1);
+                t1.focus();
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="bt1" value="点击按钮让文本框获得焦点">
+    <!-- accesskey 快速获得焦点--快捷键alt+a -->
+    <u>a</u><input type="text" id="t1" accesskey="a">
+</body>
+</html>

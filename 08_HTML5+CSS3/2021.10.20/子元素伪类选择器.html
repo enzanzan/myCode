@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子元素伪类选择器</title>
+    <style>
+        /* p:first-child {
+            background-color: #090;
+            color: #fff;
+        } */
+        /* p:last-child {
+            background-color: #090;
+            color: #fff;
+        } */
+        p:nth-child(2) {
+            background-color: #090;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>第一个p标记</p>
+        <b>加粗</b>
+        <div>第二个div</div>
+    </div>
+    <div>
+        <p>测试哈哈</p>
+    </div>
+    <div class="special">
+        <div>
+            <p>呵呵呵</p>
+            <p>嘻嘻嘻</p>
+        </div>
+    </div>
+    <P>我是帅哥</P>
+</body>
+
+</html>

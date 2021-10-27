@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onchange_1</title>
+</head>
+<script src="../js/addEvent.js"></script>
+<script>
+    addEvent(window,"load",function(){
+        var sex=document.getElementsByName("sex");
+        // addEvent(sex[0],"change",function(){
+        //     console.log("触发了onchange事件");
+        // })
+        // addEvent(sex[1],"change",function(){
+        //     console.log("触发了onchange事件");
+        // })
+        sex[0].onchange=sex[1].onchange=function(){
+            console.log("触发了onchange事件");
+        }
+    })
+</script>
+<body>
+    <input type="radio" name="sex" value="0">男
+    <input type="radio" name="sex" value="1">女
+</body>
+</html>

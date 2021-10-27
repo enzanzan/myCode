@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #f00;
+            position: relative;
+        }
+
+        input#one {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        input#two {
+            position: absolute;
+            top: 0px;
+            left: 60px;
+        }
+
+        input#three {
+            position: absolute;
+            top: 0px;
+            left: 120px;
+        }
+
+        #div1 div {
+            background-color: lime;
+            width: 200px;
+            height: 170px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .highlight {
+            background-color: mediumblue;
+            color: #fff;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var div1 = document.getElementById("div1");
+            var inputs = div1.getElementsByTagName("input");
+            var divs = div1.getElementsByTagName("div");
+
+            //1.给每个按钮绑定单击事件
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].onclick = function () {
+                    //2.清除所有的高亮类，还有div的样式
+                    for (var j = 0; j < inputs.length; j++) {
+                        inputs[j].className = "";
+                        divs[j].style.display = "none";
+                    }
+                    //3.单击的这个按钮添加高两类，让他对应的div显示出来
+                    this.className = "highlight";
+                    if (window.addEventListener) {
+                        //ie9+
+                        this.nextElementSibling.style.display = "block";
+                    } else {
+                        //ie6/7/8
+                        this.nextSibling.nextSibling.style.display = "block";
+                    }
+                }
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <input type="button" value="导航1" id="one" class="highlight">
+        <div style="display:block;">内容1</div>
+        <input type="button" value="导航2" id="two">
+        <div>内容2</div>
+        <input type="button" value="导航3" id="three">
+        <div>内容3</div>
+    </div>
+</body>
+
+</html>

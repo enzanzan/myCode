@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            border: 2px solid #f00;
+        }
+
+        .two {
+            background-color: magenta;
+        }
+
+        .three {
+            color: #09f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">测试哈哈哈哈</div>
+</body>
+<script>
+    var div1 = document.getElementById("div1");
+    function addClass(elem, newClass) {
+        elem.className = elem.className + " " + newClass;
+    }
+
+    function removeClass(elem, reClass) {
+        //得到字符串的类名转化成的数组
+        var arr = elem.className.split(" ");
+        //搜索要删除的类名在数组中的下标
+        num = arr.indexOf(reClass);
+        if (num > 0) {
+            //运用splice()方法删除该类名
+            arr.splice(num, 1);
+            //删除之后的数组通过空格连接成字符串
+            elem.className = arr.join(" ");
+            alert("删除成功")
+        } else {
+            alert("没有添加该类");
+        }
+
+
+    }
+</script>
+
+</html>

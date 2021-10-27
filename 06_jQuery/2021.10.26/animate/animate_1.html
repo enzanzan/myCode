@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate_1</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: #090;
+        }
+    </style>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function () {
+            $("input:eq(0)").click(function () {
+                $("div").animate({ "width": "400px", "height": "400px" }, 1000)
+            })
+            $("input:eq(1)").click(function () {
+                $("div").animate({ "width": "200px", "height": "200px" }, 1000)
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="变大">
+    <input type="button" value="变小">
+    <div id="div1"></div>
+</body>
+
+</html>

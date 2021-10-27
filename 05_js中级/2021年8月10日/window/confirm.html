@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书管理系统</title>
+    <script>
+        // 做一个图书管理系统，添加完书籍后，弹出一个对话框，问是否继续添加书籍
+        // 如果添加书籍就跳转回添加书籍页面
+        // 否则，不添加了，跳转到首页
+        var p=confirm("是否继续添加书籍？");
+        if(p){
+            location.href="addbook.html";
+        }else{
+            location.href="index.html";
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

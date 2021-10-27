@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建父类--人类
+        function Human(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // 方法
+        Human.prototype.eat = function () {
+            alert("吃出健康来");
+        }
+        // 继承父类的方法--原型对象拷贝
+        // 原型对象  构造器函数.prototype{constructor:f(){}}       
+        for (var key in Human.prototype) {
+            // 添加方法
+            Student.prototype[key] = Human.prototype[key];
+        }
+        // 创建子类--学生类
+        function Student(name, age, sex, sno, sdept) {
+            // 继承父类的属性
+            // 子类种调用父类的构造器函数
+            Human.call(this, name, age, sex);
+            this.sno = sno;
+            this.sdept = sdept;
+        }
+        Student.prototype.study = function () {
+            alert("自律 用心");
+        }
+        // 通过Student类实例化一个对象
+        var s1 = new Student("tom", 19, "男", "10001", "计算机系");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

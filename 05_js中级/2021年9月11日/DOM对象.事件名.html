@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM对象.事件名绑定事件</title>
+    <style>
+        #div1{
+            background-color: #090;
+            width: 80px;
+            height: 30px;
+            border-radius: 4px;
+            margin:60px 0px 0px 300px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            div1.onclick=function(){
+                alert("好好xiao习，天tian向上");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        点我试试
+    </div>
+</body>
+</html>

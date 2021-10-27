@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.11.2.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+        }
+    </style>
+    <script>
+        $(function () {
+            var flag = true;
+            $("input").click(function () {
+                $("div").fadeToggle(2000, "swing", function () {
+                    $("input").val(flag ? "显示" : "隐藏");
+                    flag = !flag;
+                });
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" id="bt1" value="隐藏">
+    <div>
+        天道酬勤
+    </div>
+</body>
+
+</html>

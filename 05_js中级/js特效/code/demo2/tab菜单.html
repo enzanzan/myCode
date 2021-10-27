@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>tab菜单</title>
+	<style>
+		#div1 {
+			border: 3px solid #f00;
+			width: 260px;
+			height: 260px;
+			position: relative;
+		}
+
+		#a1 {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 60px;
+			height: 24px;
+		}
+
+		#b1 {
+			position: absolute;
+			left: 80px;
+			top: 0px;
+			width: 60px;
+			height: 24px;
+		}
+
+		#c1 {
+			position: absolute;
+			left: 160px;
+			top: 0px;
+			width: 60px;
+			height: 24px;
+		}
+
+		#div1 div {
+			width: 250px;
+			height: 180px;
+			background: #ff0;
+			display: none;
+			position: relative;
+			top: 28px;
+
+		}
+
+		.active {
+			background: #090;
+			color: #fff;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var div1 = document.getElementById("div1");
+			var inputs = div1.getElementsByTagName("input");
+			var divs = div1.getElementsByTagName("div");
+			for (var i = 0; i < inputs.length; i++) {
+				inputs[i].onclick = function () {
+					for (var j = 0; j < inputs.length; j++) {
+						inputs[j].className = "";
+						divs[j].style.display = "none";
+					}
+					this.className = "active";
+					if (-[1,]) {
+						this.nextElementSibling.style.display = "block";
+					} else {
+						this.nextSibling.nextSibling.style.display = "block";
+					}
+				};
+			}
+		};
+	</script>
+</head>
+
+<body>
+	<div id="div1">
+		<input type="button" value="aa" id="a1">
+		<div style="display:block;">内容一</div>
+		<input type="button" value="bb" id="b1">
+		<div>内容二</div>
+		<input type="button" value="cc" id="c1">
+		<div>内容三</div>
+	</div>
+</body>
+
+</html>

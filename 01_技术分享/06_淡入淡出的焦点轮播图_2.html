@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淡入淡出的焦点轮播图</title>
+    <link rel="stylesheet" href="css/banner.css">
+</head>
+
+<body>
+    <div class="banner">
+        <ul>
+            <li class="active"><img src="img/1.jpg"></li>
+            <li><img src="img/2.jpg"></li>
+            <li><img src="img/3.jpg"></li>
+            <li><img src="img/4.jpg"></li>
+            <li><img src="img/5.jpg"></li>
+        </ul>
+        <ol class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <span class="left">&lt;</span>
+        <span class="right">&gt;</span>
+    </div>
+
+    <script src="js/jquery-1.11.2.js"></script>
+    <script>
+        var banner = $('.banner');
+        var lis = $('.banner ul li');
+        var dots = $('.banner .dots li');
+        var left = $('.banner .left');
+        var right = $('.banner .right');
+
+        var timer = null;
+        var num = 0;
+
+        function play() {
+            num = num % lis.length;
+            // fadeIn(毫秒数):淡入效果显示隐藏的图片
+            // fadeOut(毫秒数):淡出效果隐藏图片
+            lis.eq(num).stop().fadeIn(500).siblings().fadeOut(600);
+            dots.eq(num).addClass('active').siblings().removeClass('active');
+        }
+
+        // 功能一:实现自动轮播
+        function autoPlay() {
+            timer = setInterval(function () {
+                num++;
+                play();
+            }, 1000)
+        }
+        autoPlay();
+
+        // 功能二:鼠标划入停止轮播，鼠标划出启动轮播
+        // hover(函数1,函数2):当鼠标划入划出 banner 时执行的两个函数
+        banner.hover(function () {
+            clearInterval(timer);
+        }, function () {
+            autoPlay();
+        })
+
+        // 功能三:单击 left 和 right 按钮切换至上一张图片和下一张图片
+        left.click(function () {
+            num--;
+            play();
+        })
+
+        right.click(function () {
+            num++;
+            play();
+        })
+
+        // 功能四:点击焦点切换至指定图片
+        dots.click(function () {
+            var index = $(this).index();
+            num = index;
+            lis.eq(num).stop().fadeIn(500).siblings().fadeOut(600);
+            dots.eq(num).addClass('active').siblings().removeClass('active');
+        })
+    </script>
+</body>
+
+</html>

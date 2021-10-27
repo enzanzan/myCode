@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            border:1px solid #f00;
+            width:200px;
+            height:200px;
+        }
+        #div1 div{
+            width:200px;
+            height: 160px;
+            background-color: #ff0;
+            display: none;
+        }
+        .heightlight{
+            background-color: #09f;
+            color:#fff;
+        }
+    </style>
+    <script>
+        // 获得DOM对象
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            var inputs=div1.getElementsByTagName("input");
+            var divs=div1.getElementsByTagName("div");
+
+            for(var i=0;i<inputs.length;i++){
+                // 添加自定义属性
+                inputs[i].index=i;                
+                // 循环绑定事件
+                inputs[i].onclick=function(){
+                    // 清空操作
+                    for(var j=0;j<inputs.length;j++){ 
+                        // 让所有的input去掉类
+                        inputs[j].className="";
+                        // 让所有div都隐藏
+                        divs[j].style.display="none"; 
+                    }
+                    // 给当前单击的button加类
+                    this.className="heightlight";
+                    // 让对应div内容显示
+                    divs[this.index].style.display="block";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="button" value="导航1">
+        <input type="button" value="导航2">
+        <input type="button" value="导航3">
+        <div style="display: block;">小</div>
+        <div>蛋</div>
+        <div>蛋</div>
+    </div>
+</body3>
+</html>

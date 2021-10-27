@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js99乘法表</title>
+    <style>
+        table,td{
+            border: 1px solid #0cc;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var tab=document.createElement("table");// 创建一个table节点
+        var tah=document.createElement("thead");// 创建一个thead节点
+        var tay=document.createElement("tbody");// 创建一个tbody节点
+        var taf=document.createElement("tfoot");// 创建一个tfoot节点
+
+        // 将thead tbody tfoot节点插入到table中
+        tab.appendChild(tah);
+        tab.appendChild(tay);
+        tab.appendChild(taf);
+
+        // 在tbody中创建tr节点
+        var tce=tay.insertRow();
+        // 99乘法表第一列
+        tce.insertCell().appendChild(document.createTextNode("*"));
+        // 乘法表第一行中的其他9列
+        for(var i=1;i<10;i++){
+            var td=tce.insertCell();
+            td.appendChild(document.createTextNode(i));
+        }
+
+        // 乘法表主体部分
+        for(var i=1;i<=9;i++){
+            // 每一行
+            var tce1=tay.insertRow();
+            // 每一行第一列
+            tce1.insertCell().appendChild(document.createTextNode(i));
+            for(var j=1;j<=9;j++){
+                // 每一行其他9列
+                tce1.insertCell().appendChild(document.createTextNode(i+"*"+j+"="+i*j));
+            }
+        }
+        // 将table追加到body中
+        document.body.appendChild(tab);
+
+    </script>
+</body>
+</html>

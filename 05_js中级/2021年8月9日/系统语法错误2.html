@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        try{
+            test();
+        }catch(e){
+            // e--发送语法错误，由js解释器自动创建，并赋值的Error对象
+            // Error对象有一个属性message--存储的是Error信息
+            alert(e.message);
+            // 用try--catch处理语法错误，那么系统就不进行处理，console就不到任何错误信息
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

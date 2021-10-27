@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one{
+            background: #009900;
+            color:#ffffff;
+        }
+        .two{
+            border:1px solid #ff0000;
+            background: #ffff00;
+        }
+        .three{
+            text-decoration:underline;
+        }
+    </style>
+</head>
+<body>
+    多个类选择器应用于同一个标记，如果属性没有冲突，那么全部生效；
+    如果属性冲突，那么写到后面的选择器生效。
+    <p class="one two three" style="background: #ff0000;">测试哈哈哈</p>
+</body>
+</html>

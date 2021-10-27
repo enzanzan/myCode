@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on事件绑定</title>
+    <style>
+        p {
+            background-color: #09f;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../js/jquery-1.11.2.js"></script>
+    <script>
+        $(function () {
+            $("p").on("click", function () {
+                alert("你触发了click事件")
+            })
+            $("input").click(function () {
+                $("div").append("<p>我是帅哥</p>")
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" value="添加p">
+    <div>
+        <p>p1标记</p>
+        <p>p2标记</p>
+        <p>p3标记</p>
+        <p>p4标记</p>
+        <p>p5标记</p>
+    </div>
+</body>
+
+</html>

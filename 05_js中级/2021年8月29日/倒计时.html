@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: lightblue;
+        }
+
+        .container {
+            font-size: 60px;
+        }
+
+        h3 {
+            font-weight: normal;
+            margin: 100px 0px 0px 100px;
+        }
+
+        #div1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ff0;
+        }
+
+        span {
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var div1 = document.getElementById("div1");
+            function Djs() {
+                //创建日期对象
+                var myDate = new Date();
+                //设置当前日期时间戳
+                var ms = myDate.getTime();
+                //设置目标时间
+                var oDate = new Date("2021/10/1 00:00:00");
+                // 获取目标时间的时间戳
+                var oDatems = oDate.getTime();
+                //设置当前时间和目标时间相距的秒数
+                var sceond = (oDatems - ms) / 1000;
+                //获取天数
+                var d = Math.floor(sceond / (24 * 60 * 60));
+                //获取剩余秒数
+                sceond = sceond % (24 * 60 * 60);
+                //获取小时 
+                var h = Math.floor(sceond / (60 * 60));
+                //获取剩余秒数
+                sceond = sceond % (60 * 60);
+                //获取分钟
+                var m = Math.floor(sceond / 60);
+                //获取秒数
+                sceond = Math.floor(sceond % 60);
+                var str = d + "<span>天</span>" + h + "<span>小时</span>" + m + "<span>分钟</span>" + sceond + "<span>秒</span>";
+                div1.innerHTML = str;
+            }
+            Djs();
+            setInterval(Djs, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>距离国庆还有：</h3>
+        <div id="div1"></div>
+    </div>
+</body>
+
+</html>

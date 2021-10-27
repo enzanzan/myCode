@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡动画_1</title>
+    <style>
+        div.pic {
+            width: 600px;
+            height: 200px;
+            border: 2px solid #f00;
+            overflow: hidden;
+        }
+
+        /* 1.初始样式 */
+        div.pic img {
+            /* 缩放 */
+            transform: scale(1, 1);
+        }
+
+        /* 2.哪些样式改变-过渡动画：样式 动画持续时间 缓动方式 延迟时间*/
+        div.pic img {
+            transition: transform 0.4s ease-in 0s;
+        }
+
+        /* 最终样式和触发条件 */
+        div.pic img:hover {
+            transform: scale(1.2, 1.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pic">
+        <img src="img/1.jpg" alt="">
+    </div>
+</body>
+
+</html>

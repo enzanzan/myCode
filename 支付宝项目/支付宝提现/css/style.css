@@ -1,0 +1,338 @@
+body,
+ul,
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+img{
+    vertical-align: top;
+}
+div#container {
+    width: 400px;
+    height: 700px;
+    margin: 0 auto;
+    background: url(../img/phone_1.png) no-repeat;
+    position: relative;
+    /* border: 1px solid #f00; */
+}
+
+div#time {
+    width: 100px;
+    height: 10px;
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    font-weight: bold;
+    /* border: 1px solid #ff0; */
+
+}
+
+div#show {
+    float: left;
+    width: 80px;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    /* border: 1px solid #909; */
+}
+
+div#top {
+    float: left;
+    width: 280px;
+    font-size: 14px;
+    position: absolute;
+    top: 80px;
+    /* cursor: pointer; */
+    left: 55px;
+    /* border: 1px solid #09f; */
+}
+
+.top_tx {
+    /* border: 1px solid #090; */
+    font-weight: bold;
+    margin: 0px 90px;
+}
+
+#content {
+    width: 291px;
+    height: 555px;
+    background-color: #f7f7f7;
+    /* border: 1px solid #f00; */
+    position: absolute;
+    top: 115px;
+    left: 41px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+div.content_txd {
+    margin: 20px 0px 0px 20px;
+}
+
+div.content_yhk {
+    width: 270px;
+    float: left;
+    /* border: 1px solid #090; */
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+span.right {
+    margin-left: 40px;
+}
+
+div.content_yhk .content_p1 {
+    font-size: 5px;
+    margin-left: 20px;
+    color: #b8b8b8;
+}
+
+div.content_tx {
+    margin: 60px auto;
+    width: 275px;
+    height: 125px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.content_tx .content_c1 {
+    width: 60px;
+    margin: 10px 0px 0px 10px;
+    /* border: 1px solid #f00; */
+}
+
+.content_je {
+    width: 260px;
+    height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 35px auto 0px auto;
+    border-bottom: 1px solid #eeeeee;
+    /* border: 1px solid #f00; */
+}
+
+
+.content_tx #money {
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-weight: bold;
+    width: 200px;
+}
+
+#content_s1 {
+    display: none;
+}
+
+.content_ky {
+    margin: 10px 0px 0px 12px;
+    color: #b8b8b8;
+}
+
+.content_ky,
+#content_all {
+    font-size: 5px;
+    font-weight: normal;
+    float: left;
+
+}
+
+#content_all {
+    color: #516a95;
+    margin: 10px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.content_qrtx {
+    position: absolute;
+    width: 280px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    top: 460px;
+    left: 6px;
+    background-color: rgba(55, 117, 246, 0.5);
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.content_qrtx_highlight{
+    position: absolute;
+    width: 280px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    top: 460px;
+    left: 6px;
+    background-color: #3775f6;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+.content_bottom {
+    position: absolute;
+    width: 110px;
+    height: 4px;
+    border-radius: 6px;
+    top: 550px;
+    left: 90px;
+    background-color: #555;
+}
+
+.sr {
+    position: relative;
+    display: none;
+    top: 50px;
+}
+
+#sq {
+    width: 290px;
+    height: 20px;
+    text-align: center;
+    /* border: 1px solid #f00; */
+    background-color: #fff;
+    cursor: pointer;
+    padding-top: 5px;
+    border-bottom: 1px solid #f7f7f7;
+}
+#sq:hover{
+    background-color: #eee;
+}
+
+.jp {
+    float: left;
+    width: 220px;
+    height: 150px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #555;
+    text-align: center;
+    /* border: 1px solid #f00; */
+}
+
+.jp td {
+    border-right: 1px solid #f7f7f7;
+    border-bottom: 1px solid #f7f7f7;
+    cursor: pointer;
+}
+
+.jp td:hover {
+    background-color: #eee;
+}
+
+.jp_right {
+    width: 70px;
+    float: left;
+    text-align: center;
+    /* border: 1px solid #f00; */
+}
+
+#sc {
+    height: 25px;
+    padding-top: 10px;
+    /* border: 1px solid #f00; */
+    background-color: #fff;
+    cursor: pointer;
+}
+#sc:hover{
+    background:#eee;
+}
+
+.tx {
+    height: 114px;
+    /* border: 1px solid #f00; */
+    line-height: 114px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}  
+.tx_highlight {
+    height: 114px;
+    line-height: 114px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #3775f6;
+}      
+div.aks{
+    width: 250px;
+    height: 200px;
+    background-color: #fff;
+    position: absolute;
+    left: 20px;
+    top: 130px;
+    display: none;
+    border-radius: 6px;
+    /* border: 3px solid #090; */
+    z-index: 3;
+}
+div.aks_top{
+    width: 248px;
+    height: 23px;
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: bold;
+}
+div.aks_top img{
+    margin: 7px 0px 0px 10px;
+}
+div.aks_top img:hover{
+    cursor: pointer;
+}
+div.aks_top .yetx{
+    display: inline-block;
+    margin: 3px 0px 0px 68px;
+}
+div.jin_e{
+    width: 248px;
+    height: 60px;
+    margin-top: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 60px;
+    /* border: 1px solid #f09; */
+    text-align: center;
+}
+div.fwf{
+    width: 230px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 20px;
+    padding-left: 15px;
+    color: #888888;
+    /* border: 2px solid #09f; */
+}
+div.fwf .fwf_r{
+    display: inline-block;
+    width: 50px;
+    margin-left: 140px;
+    /* border: 1px solid #006; */
+}
+div.aks_tx{
+    width: 230px;
+    height: 30px;
+    line-height: 30px;
+    margin: 25px auto;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #3775f6;
+    cursor: pointer;
+}
+div.zzc{
+    width: 293px;
+    height: 555px;
+    background:rgba(0,0,0,0.5);
+    /* border: 1px solid #f00; */
+    position: relative;
+    top: -282px;
+    left: -1px;
+    z-index: 2;
+    border-bottom-left-radius: 33px;
+    border-bottom-right-radius: 33px;
+    display: none;
+}

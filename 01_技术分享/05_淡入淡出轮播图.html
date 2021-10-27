@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淡入淡出轮播图</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        body {
+            background: url(img/bg.jpg);
+            background-size: cover;
+        }
+
+        .banner {
+            width: 1600px;
+            height: 500px;
+            margin: 100px auto;
+            /* 阴影 */
+            /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); */
+            position: relative;
+        }
+
+        .banner:hover {
+            cursor: pointer;
+        }
+
+        .banner ul {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .banner ul li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+
+        .banner ul li.active {
+            display: block;
+        }
+
+        .dots {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            /* z-index: 2; */
+        }
+
+        .dots li {
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.6);
+            float: left;
+            border-radius: 50%;
+            margin: 0px 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .dots li.active {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .banner span {
+            width: 50px;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+            font-family: '宋体';
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            /* cursor: pointer; */
+        }
+
+        .banner .right {
+            left: auto;
+            right: 0;
+        }
+
+        .banner span:hover {
+            background: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="banner">
+        <ul>
+            <li class="active"><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>
+            <li><img src="img/5.jpg" alt=""></li>
+        </ul>
+        <ol class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <span class="left">&lt;</span>
+        <span class="right">&gt;</span>
+    </div>
+
+    <script src="js/jquery-1.11.2.js"></script>
+    <script>
+        var $banner = $('.banner');
+        var $lis = $('.banner ul li');
+        var $dots = $('ol li');
+        var $left = $('.left');
+        var $right = $('.right');
+        // 定时器
+        var timer = null;
+        var num = 0;
+
+        function play() {
+            num = num % $lis.length;
+            // fadeIn(毫秒数):使用淡入效果来显示隐藏的元素
+            // fadeOut(毫秒数):使用淡出效果来隐藏元素
+            $lis.eq(num).stop().fadeIn(500).siblings().fadeOut(800);
+            $dots.eq(num).addClass('active').siblings().removeClass('active');
+        }
+
+        // 实现自动轮播
+        function autoPlay() {
+            timer = setInterval(function () {
+                num++;
+                play();
+            }, 2000)
+        }
+        autoPlay();
+
+        // 鼠标划入停止轮播，鼠标划出开始轮播
+        // hover() :当鼠标指针悬停在 banner上时要运行的两个函数
+        $banner.hover(function () {
+            clearInterval(timer);
+        }, function () {
+            autoPlay();
+        })
+
+        // 切换至上一张图片
+        $left.click(function () {
+            num--;
+            clearInterval(timer);
+            play();
+        })
+
+        // 切换至下一张图片
+        $right.click(function () {
+            num++;
+            clearInterval(timer);
+            play();
+        })
+
+        // 单击焦点切换至指定图片
+        $dots.click(function () {
+            var index = $(this).index();
+            num = index;
+            $lis.eq(num).stop().fadeIn(500).siblings().fadeOut(800);
+            $dots.eq(num).addClass('active').siblings().removeClass('active');
+        })
+    </script>
+</body>
+
+</html>

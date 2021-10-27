@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生js实现简单计算器</title>
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+
+<body>
+    <div class="dome">
+        <!-- 显示屏 -->
+        <input type="text" id="ipt" value="" disabled>
+
+        <!-- 计算器按键 -->
+        <button onclick="clean()">C</button>
+        <button onclick="addCount(this.innerText)">÷</button>
+        <button onclick="addCount('*')">×</button>
+        <button onclick="back()">←</button>
+
+        <button onclick="addCount(this.innerText)">7</button>
+        <button onclick="addCount(this.innerText)">8</button>
+        <button onclick="addCount(this.innerText)">9</button>
+        <button onclick="addCount(this.innerText)">-</button>
+
+        <button onclick="addCount(this.innerText)">4</button>
+        <button onclick="addCount(this.innerText)">5</button>
+        <button onclick="addCount(this.innerText)">6</button>
+        <button onclick="addCount(this.innerText)">+</button>
+
+        <button onclick="addCount(this.innerText)">1</button>
+        <button onclick="addCount(this.innerText)">2</button>
+        <button onclick="addCount(this.innerText)">3</button>
+
+        <button id="result" onclick="result()">=</button>
+        <button id="noFloat1" onclick="addCount(this.innerText)">%</button>
+        <button id="noFloat2" onclick="addCount(this.innerText)">0</button>
+        <button id="noFloat3" onclick="addCount(this.innerText)">.</button>
+    </div>
+</body>
+<script src="js/demo.js"></script>
+
+</html>

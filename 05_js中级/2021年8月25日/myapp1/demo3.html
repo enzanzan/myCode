@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function getCookie($name){
+				var data=document.cookie;
+				// 分割后的数组--每个元素就是一个变量=值对
+				var dataArray=data.split("; ");
+				for(var i=0;i<dataArray.length;i++){
+					// 获取变量和变量值
+					var keyName=dataArray[i].split("=")[0];
+					var keyvalue=dataArray[i].split("=")[1];
+					if(keyName==$name){
+						return decodeURI(keyvalue);
+					}
+				}
+				return "不存在的变量名";
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

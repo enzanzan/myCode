@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 第一步：导入jquery库 -->
+    <script src="js/jquery-1.11.2.js"></script>
+    <!-- 第二步 -->
+    <script>
+        window.onload = function () {
+            alert("window.onload事件");
+        }
+        // DOM对象创建完毕立即执行
+        // 事件名 ready
+        // document --> DOM对象的根对象
+        // $(document) --> DOM对象转成jquery对象
+        $(document).ready(function () {
+            alert("hello word");
+        });
+
+        // 简写
+        // DOM对象创建完毕立即触发
+        // A前端
+        $(function () {
+            var x = 100;
+            alert("hello word1");
+            alert(x);
+        });
+        // B前端
+        $(function () {
+            var y = 200;
+            alert("hello word2");
+            alert(y);
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

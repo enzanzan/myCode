@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function A(){
+            // 工厂模式添加属性
+            this.abc="aaa";
+        }
+            // 原型模式添加方法
+            A.prototype.f=function(){
+                alert(this.abc);
+            }
+            
+        function B(){
+            // this相当于B对象，继承父类的属性
+            A.call(this);
+        }
+        for(var i in A.prototype){
+            // 继承父类的方法
+            B.prototype[i]=A.prototype[i];
+        }
+        var obj=new B();
+        obj.f();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

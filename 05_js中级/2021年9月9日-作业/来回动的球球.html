@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>来回动的球球</title>
+    <style>
+        #div1{
+            background-color: #090;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 10px;
+            border-radius: 50%;
+        }
+        input{
+            position: relative;
+            top:180px;
+
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            var bt1=document.getElementById("bt1");
+            var bt2=document.getElementById("bt2");
+
+            // 给开始按钮绑定事件
+            bt1.onclick=function(){
+                var flag=true;
+                var sid=setInterval(function(){
+                    if(flag){
+                        this.style.left=this.offsetLeft+1+"px";
+                        if(this.offsetLeft==600){
+                            flag=false;
+                        }
+                    }else{
+                        this.style.left=this.offsetLeft-1+"px";
+                        if(this.offsetLeft==10){
+                            flag=true;
+                        }
+                    }
+                    bt2.onclick=function(){
+                        clearInterval(sid);
+                    }
+                }.bind(div1),10)
+                } 
+            }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <input type="button" id="bt1" value="开始">
+    <input type="button" id="bt2" value="暂停">
+</body>
+</html>

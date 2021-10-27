@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:2px solid #f00;
+        }
+        p{
+            background-color: #09f;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            var bt1=document.getElementById("bt1");
+            var p;
+            bt1.onclick=function(){
+                // 创建空的p
+                p=document.createElement("p");
+                // 在p里面添加内容
+                p.innerText="这是p标记";
+                // 把p添加到div1里
+                div1.appendChild(p);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="bt1" value="点击向div中添加1个p标记">
+    <div id="div1">
+ 
+    </div>
+</body>
+</html>

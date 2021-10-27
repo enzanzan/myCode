@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输出菱形</title>
+</head>
+<script>
+    // 居中
+    document.write("<center>")
+
+    // 输出上半部分的形状
+    // 输出行数
+    for (var i = 1; i <= 9; i++) {
+        // document.write("*");
+        // 输出 * 数
+        for (var j = 1; j <= 2 * i - 1; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+
+    // 输出下半部分的形状
+    for (var i = 10; i >= 1; i--) {
+        for (var j = 1; j <= 2 * i - 1; j++) {
+            document.write("*")
+        }
+        document.write("<br>");
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

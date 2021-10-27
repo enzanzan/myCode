@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery二级菜单</title>
+    <style>
+        body,
+        ul,
+        h3 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        #container {
+            margin: 10px 10px 0px 60px;
+            width: 300px;
+            /* border: 1px solid #f00; */
+        }
+
+        .nav {
+            position: relative;
+
+        }
+
+        .nav>li {
+            position: relative;
+            background-color: #f9f;
+            color: #fff;
+            width: 100px;
+            height: 22px;
+            border: 1px solid #ff0;
+            font-size: 14px;
+        }
+
+        .nav>li:hover {
+            background-color: #090;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .first {
+            position: absolute;
+            display: none;
+            top: 0px;
+            left: 100px;
+        }
+
+        .first li {
+            width: 100px;
+            height: 22px;
+            background-color: #090;
+            cursor: pointer;
+            border: 1px solid #ff0;
+
+        }
+
+        .first li:hover {
+            background-color: #f9f;
+            color: #fff;
+        }
+    </style>
+    <script src="js/jquery-1.11.2.js"></script>
+    <script>
+        $(function () {
+            $("li").mouseover(function () {
+                $(this).children("ul").show()
+                    .end()
+                    .siblings("li").children().hide()
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <ul class="nav">
+            <li>导航1
+                <ul class="first">
+                    <li>内容1</li>
+                    <li>内容2</li>
+                    <li>内容3</li>
+                    <li>内容4</li>
+                    <li>内容5</li>
+                </ul>
+            </li>
+            <li>导航2
+                <ul class="first">
+                    <li>内容1</li>
+                    <li>内容2</li>
+                    <li>内容3</li>
+                    <li>内容4</li>
+                    <li>内容5</li>
+                </ul>
+            </li>
+            <li>导航3
+                <ul class="first">
+                    <li>内容1</li>
+                    <li>内容2</li>
+                    <li>内容3</li>
+                    <li>内容4</li>
+                    <li>内容5</li>
+                </ul>
+            </li>
+            <li>导航4
+                <ul class="first">
+                    <li>内容1</li>
+                    <li>内容2</li>
+                    <li>内容3</li>
+                    <li>内容4</li>
+                    <li>内容5</li>
+                </ul>
+            </li>
+            <li>导航5
+                <ul class="first">
+                    <li>内容1</li>
+                    <li>内容2</li>
+                    <li>内容3</li>
+                    <li>内容4</li>
+                    <li>内容5</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

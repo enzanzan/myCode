@@ -1,0 +1,58 @@
+       .tips{
+            padding-left:152px;
+            font:12px/3em arial;
+            color:#73777a;
+            opacity: .2;
+        }
+        .tips:hover{
+            color:#73777a;
+            opacity: 1;
+        }
+        #answer{
+            overflow:hidden;
+            padding-top:60px;
+            padding-bottom: 0px;
+            max-width: 254px;
+            height: 42px;
+            background: #fcfcfc;
+            border:none;
+            font:32px Microsoft YaHei;
+            text-align: right;
+        }
+        #top2 td{
+            overflow:hidden;
+            padding-top:9px;
+            padding-bottom: 35px;
+            max-width: 254px;
+            background: #fcfcfc;
+            border:none;
+            height: 24px;
+            font:18px Microsoft YaHei;
+            text-align: right;
+            color: #A1A1A1;
+        }
+        table{
+            width:272px;
+            border: 1px solid #DADADA;
+            border-spacing: 0;
+        }
+        
+        tr{
+            height:66px;
+        }
+        td{
+            padding: 0;
+            width:66px;
+            border-left: 0;
+            border-right: 1px solid #DADADA;
+            border-top:1px solid #DADADA;
+            background-size: 100% !important;
+        }
+        #data14,#data24,#data34,#data44{
+            border-right: 0;
+        }
+        body{
+            margin-top:30px;
+            margin-left: 30px;
+        }
+#data11{background:url(img/c.png);}#data12{background:url(img/chu.png);}#data13{background:url(img/cheng.png);}#data14{background:url(img/del.png);}#data21{background:url(img/7.png);}#data22{background:url(img/8.png);}#data23{background:url(img/9.png);}#data24{background:url(img/-.png);}#data31{background:url(img/4.png);}#data32{background:url(img/5.png);}#data33{background:url(img/6.png);}#data34{background:url(img/+.png);}#data41{background:url(img/1.png);}#data42{background:url(img/2.png);}#data43{background:url(img/3.png);}#data44{background:url(img/=.png);}#data51{background:url(img/bf.png);}#data52{background:url(img/0.png);}#data53{background:url(img/d.png);} 

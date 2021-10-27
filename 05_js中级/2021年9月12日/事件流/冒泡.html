@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #div1 {
+        background-color: #09f;
+        color: #fff;
+        width: 400px;
+        height: 400px;
+    }
+
+    #div2 {
+        background-color: #090;
+        color: #f00;
+        width: 300px;
+        height: 300px;
+    }
+
+    #div3 {
+        background-color: #909;
+        color: #fff;
+        width: 200px;
+        height: 200px;
+    }
+
+    #div4 {
+        background-color: #099;
+        color: #fff;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<script src="../js/addEvent.js"></script>
+<script>
+    addEvent(window, "load", function () {
+        var div1 = document.getElementById("div1");
+        var div2 = document.getElementById("div2");
+        var div3 = document.getElementById("div3");
+        var div4 = document.getElementById("div4");
+
+        addEvent(div1, "click", function () {
+            alert("触发了click1事件");
+        })
+        addEvent(div2, "click", function () {
+            alert("触发了click2事件");
+        })
+        addEvent(div3, "click", function () {
+            alert("触发了click3事件");
+        })
+        addEvent(div4, "click", function () {
+            var e = e || window.event;
+            alert("触发了click4事件");
+            if (window.addEventListener) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+        })
+    })
+</script>
+
+<body>
+    <div id="div1">
+        div1
+        <div id="div2">
+            div2
+            <div id="div3">
+                div3
+                <div id="div4">
+                    div4
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            // eval 函数功能:将字符串当做js直接运行
+            var json='{"stasud":"10001","msg":"ok","data":[{"id":"001","name":"tom","age":19,"sex":"男"},{"id":"002","name":"jarry","age":20,"sex":"男"},{"id":"003","name":"susan","age":20,"sex":"女"},{"id":"004","name":"zanzan","age":20,"sex":"女"}]}'
+            // 将json字符串转换成js对象
+            var obj=eval("("+json+")");
+            console.log(obj);
+
+            //用for-in遍历json装换为js对象中的数据部分
+            var str="<ul>";
+            for(var i in obj.data){
+                str+="<li>学号:"+obj.data[i].id
+                    +" 姓名:"+obj.data[i].name
+                    +" 年龄:"+obj.data[i].age
+                    +" 性别:"+obj.data[i].sex
+                    +"</li>";
+            }
+            console.log(str);
+            div1.innerHTML=str+"</ul>";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</html>

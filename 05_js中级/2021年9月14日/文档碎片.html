@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div"></div>
+    <input type="button" id="bt1" value="添加">
+</body>
+<script>
+    // 创建一个文档碎片
+    var df = document.createDocumentFragment()
+    var bt1 = document.getElementById("bt1")
+    bt1.onclick = function () {
+        for (var i = 1; i <= 3; i++) {
+            var ps = document.createElement("p")
+            ps.innerText = "添加的内容" + (i);
+            df.appendChild(ps)
+        }
+        document.body.appendChild(df)
+    }
+</script>
+
+</html>

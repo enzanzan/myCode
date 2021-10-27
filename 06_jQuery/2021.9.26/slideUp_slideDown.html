@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.11.2.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("input:eq(0)").click(function () {
+                $("div").slideUp(2000, "swing", function () {
+                    alert("动画结束了");
+                });
+            })
+        });
+        $(function () {
+            $("input:eq(1)").click(function () {
+                $("div").slideDown(2000, "swing", function () {
+                    alert("动画结束了");
+                });
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" id="bt1" value="隐藏">
+    <input type="button" id="bt2" value="显示">
+    <div>
+        天道酬勤
+    </div>
+</body>
+
+</html>

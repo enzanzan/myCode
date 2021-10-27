@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>二级菜单</title>
+<style>
+.nav{
+	width:400px;
+}
+.nav a{
+	text-decoration:none;
+	font-size:16px;
+	font-family:微软雅黑;
+	line-height:1.5em;
+	display:block;
+	padding-top:5px;	
+	padding-bottom:5px;
+}
+.nav a:hover{
+	background:#090;	
+	color:#fff;
+	font-size:16px;
+	font-family:微软雅黑;
+	line-height:1.5em;
+
+}
+.nav li{
+	height:24px;
+	width:150px;
+	*vertical-align:top;
+}
+.nav ul{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+#first{
+	background:#ff0;
+	position:relative;
+	width:150px;
+}
+#first ul{
+	display:none;
+	background:#ccc;
+	position:absolute;
+	top:0px;
+	left:150px;
+	width:140px;
+}
+#first li{
+	position:relative;
+	border-bottom:1px solid #fff;
+	height:34px;
+	background:#ccc;
+}
+
+
+#first ul a:hover{
+	background:#0e0;
+}
+</style>
+
+</head>
+
+<body>
+<div class="nav">
+    <ul id="first">
+        <li><a href="#">&nbsp;关于我们</a></li>
+        <li><a href="#">&nbsp;企业新闻</a></li>
+        <li><a href="#">&nbsp;企业文化</a></li>
+        <li><a href="#">&nbsp;产品介绍</a>
+        <ul>
+                <li><a href="#">&nbsp;手机</a></li>
+                <li><a href="#">&nbsp;笔记本</a></li>
+                <li><a href="#">&nbsp;数码相机</a></li>
+                <li><a href="#">&nbsp;台式机</a></li>
+                <li><a href="#">&nbsp;打印机</a></li>
+                <li><a href="#">&nbsp;办公耗材</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+<script>
+var first=document.getElementById("first");
+first.children[3].onmouseover=function(){
+  this.children[1].style.display="block";	
+};
+first.children[3].onmouseout=function(){
+  this.children[1].style.display="none";	
+};
+
+</script>
+</html>

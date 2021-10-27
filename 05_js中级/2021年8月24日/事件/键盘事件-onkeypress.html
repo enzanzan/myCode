@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var input=document.querySelector("input");
+            // onkeypress 按键按下那一瞬间触发，字还没有显示到文本框的时候触发--按住键持续触发
+            input.onkeypress=function(){
+                console.log("触发了onkeypress事件");
+                console.log(this.value.length);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>

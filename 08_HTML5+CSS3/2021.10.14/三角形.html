@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绘制三角形</title>
+    <script>
+        function triangular() {
+            var c = document.getElementById("mycanvas");
+            var context = c.getContext("2d");
+
+            // 进行缩放，水平缩放100%，垂直缩放20%
+            context.scale(1, 0.2);
+            // 移动到120,120位置
+            context.translate(120, 120);
+            context.fillStyle = "#EE1289";  // 填充颜色
+            context.strokeStyle = "#009900";  // 描边颜色
+            context.lineWidth = 4;             // 描边线的粗细
+            context.beginPath();            // 开始绘制
+
+            // 从左上角开始绘 制
+            context.moveTo(30, 30);         // 将光标挪到指定位置
+            context.lineTo(250, 30);         // 连线
+            context.lineTo(30, 250);
+            context.lineTo(30, 30);
+
+            context.fill();
+            context.stroke();
+            context.closePath();
+        }
+        window.addEventListener("load", triangular, true);
+
+    </script>
+</head>
+
+<body>
+    <canvas id="mycanvas" height="300" width="500" style="border: 1px solid #090;">
+
+    </canvas>
+</body>
+
+</html>

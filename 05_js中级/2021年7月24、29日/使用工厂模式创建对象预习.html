@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 工厂模式--把创建对象的过程，封装成函数
+        // 构造器函数--类
+        function Student(name,age,sex){
+            var obj=new Object();   // 原料
+            // obj{} 
+            obj.name=name;
+            // {name:"tom"}
+            obj.age=age;
+            // {name:"tom",age:19}
+            obj.sex=sex;
+            // {name:"tom",age:19,sex:"男"}
+            obj.study=function(){alert("自律 用心");}
+            // {name:"tom",age:19,sex:"男",study:function(){alert("自律 用心");}}
+            return obj; // 成品
+        }
+        // 调用构造器函数--使用类创建对象
+        var s1=Student("tom",19,"男");
+        console.log(s1);
+        var s2=Student("jarry",21,"男");
+        console.log(s2);
+        var s3=Student("susan",19,"女");
+        console.log(s3);
+        console.log(s1.study===s2.study);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

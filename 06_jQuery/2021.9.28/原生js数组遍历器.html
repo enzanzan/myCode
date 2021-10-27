@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生js数组遍历器</title>
+    <script>
+        var arr = ["语文", "数学", "历史", "地理"];
+        var newArr = arr.map(function (value, index) {
+            console.log(index, value);
+            if (value == "地理") {
+                return "选修课:" + value;
+            }
+            return "必修课:" + value;
+        })
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

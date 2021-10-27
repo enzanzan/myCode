@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录验证</title>
+    <style>
+        #tips {
+            color: #f00;
+            font-size: 12px;
+        }
+    </style>
+    <script src="js/public.js"></script>
+    <script src="js/mock.js"></script>
+    <script src="js/data2_1.js"></script>
+    <script>
+        $.addEvent(window, "load", function () {
+            var userName = document.getElementById("userName");
+            var password = document.getElementById("password");
+            var bt1 = document.getElementById("bt1");
+            $.addEvent(bt1, "click", function () {
+                $.ajax({
+                    url: "check.php",
+                    type: "POST",
+                    data: JSON.stringify({ userName: userName.value, password: password.value }),
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.status == "10001") {
+                            location.href = "manage.php";
+                        } else {
+                            tips.innerText = data.message;
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+
+<body>
+    <div id="tips"></div>
+    用户名:
+    <input type="text" id="userName"><br>
+    密码:
+    <input type="password" id="password"><br>
+    <input type="button" id="bt1" value="登录">
+</body>
+
+</html>

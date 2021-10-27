@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background: url(img/bg.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        div.imgBox {
+            width: 1600px;
+            position: relative;
+            left: 50%;
+            top: 30px;
+            margin-left: -800px;
+            /* border: 10px solid #f90; */
+        }
+
+        div.focus {
+            width: 150px;
+            position: absolute;
+            top: 460px;
+            left: 50%;
+            margin-left: -75px;
+        }
+
+        .focus span {
+            display: inline-block;
+            _float: left;
+            background: url(img/dot.png) no-repeat;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var imgBox = document.querySelector(".imgBox");
+            var imgs = document.querySelector(".imgs");
+            var focus = document.querySelector("focus");
+            var spans = document.getElementsByTagName("span");
+            var currentIndex = undefined;
+
+            var i = 1;
+            setInterval(function () {
+                for (var j = 0; j < spans.length; j++) {
+                    spans[j].style.background = "url(img/dot.png) no-repeat";
+                }
+                if (currentIndex != undefined) {
+                    i = currentIndex;
+                    currentIndex = undefined;
+                }
+                spans[i].style.background = "url(img/dotActive.png) no-repeat";
+                imgs.firstElementChild.src = "img/" + (i + 1) + ".jpg";
+
+                if (i >= 4) {
+                    i = -1;
+                }
+                i++;
+            }, 2000)
+
+            // 点击焦点切换到指定图片
+            for (var k = 0; k < spans.length; k++) {
+                spans[k].index = k;
+                spans[k].onclick = function () {
+                    for (var j = 0; j < spans.length; j++) {
+                        spans[j].style.background = "url(img/dot.png) no-repeat";
+                    }
+                    this.style.background = "url(img/dotActive.png) no-repeat";
+                    currentIndex = this.index;
+                    imgs.firstElementChild.src = "img/" + (this.index + 1) + ".jpg";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="imgBox">
+        <div class="imgs">
+            <img src="img/1.jpg">
+        </div>
+        <div class="focus">
+            <span class="s1" style="background:url(img/dotActive.png) no-repeat;"></span>
+            <span class="s2"></span>
+            <span class="s3"></span>
+            <span class="s4"></span>
+            <span class="s5"></span>
+        </div>
+    </div>
+</body>
+
+</html>

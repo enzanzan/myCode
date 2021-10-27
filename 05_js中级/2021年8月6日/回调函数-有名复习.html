@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function a(){
+            return 1;
+        }
+        function b(){
+            return 2;
+        }
+        function test(x,y){
+            return x()+y();
+        }
+        var c=test(a,b);    //a b都是函数对象，传递的是内存块的首地址
+        alert(c);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

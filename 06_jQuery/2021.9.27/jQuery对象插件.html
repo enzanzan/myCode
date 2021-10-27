@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>核心对象插件使用</title>
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/myTest.js"></script>
+    <script>
+        $(function () {
+            $("div").click(function () {
+                $(this).myTest("我是帅哥").css({ width: "200px", height: "200px", background: "#ff0" })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>测试哈哈</div>
+</body>
+
+</html>

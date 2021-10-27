@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery遍历数组</title>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+
+        var arr = ["tom", "jarry", "susna", "赵四"];
+        $.each(arr, function (index, value) {
+            // console.log(index, value);
+            // 过滤
+            if (index == 1) return true;    // 相当于continue--中断本次循环后面所有的语句，直接进入++的下一次循环
+            if (index == 3) return false;   // 相当于break--停止循环
+            console.log(index, value);
+        })
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

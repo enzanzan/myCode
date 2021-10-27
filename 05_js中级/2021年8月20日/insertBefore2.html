@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: #09f;
+            width: 200px;
+            height: 200px;
+        } 
+        p{
+            background-color: #ff0;
+            color:#fff;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var div1=document.querySelector("#div1");
+            var bt1=document.querySelector("#bt1");
+            var span=document.querySelector("#s1");
+            bt1.onclick=function(){
+                // 创建一个p
+                var p=document.createElement("p");
+                p.innerText="我是帅哥";
+                div1.insertBefore(p,s1);
+           }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="bt1" value="点击div内部的s1前面添加一个p">
+    <div id="div1">
+        <span id="s1">这是span</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: #090;
+            width: 300px;
+            height: 100px;
+            margin:60px auto;
+            padding:20px 0px 0px 30px;
+            border-radius: 3px;
+        }
+        #t1,#t2,#t3{
+            width: 50px;
+            border-radius: 2px;
+            border:1px solid #09f;
+        }
+        #bt1{
+            width: 50px;
+            margin:30px 0px 0px 160px;
+            background-color: #9f9;
+        }
+    </style>
+    <script src="./js/addEvent.js"></script>
+    <script>
+        addEvent(window,"load",function(){
+            var p=function(id){
+                var obj=document.getElementById(id);
+                return obj;
+            }
+            var t1=p("t1");
+            var t2=p("t2");
+            var t3=p("t3");
+            var bt1=p("bt1");
+            
+            // 事件绑定
+            addEvent(bt1,"click",function(){
+                try{
+                    // 创建一个正则
+                    var reg=/[^0-9]/; //非数字
+                    t1Data=t1.value;
+                    t2Data=t2.value;
+                    if(t1Data.search(reg)!=-1 || t2Data.search(reg)!=-1){
+                        throw new Error("操作数不能是非数字！");
+                    }else{
+                        // 解析字符串并返回数字
+                        t1Data=parseFloat(t1Data);
+                        t2Data=parseFloat(t2Data);
+                        t3.value=t1Data+t2Data;
+                    }
+                }catch(e){
+                    alert(e.message);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="text" id="t1">
+        +
+        <input type="text" id="t2">
+        =
+        <input type="text" id="t3">
+        <br>
+        <input type="button" id="bt1" value="计算">
+    </div>
+</body>
+</html>

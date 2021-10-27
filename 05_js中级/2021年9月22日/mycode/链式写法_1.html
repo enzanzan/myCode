@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>链式写法</title>
+    <script src="js/jquery-1.11.2.js"></script>
+    <style>
+        body,
+        ul,
+        h3 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style-type: none;
+            display: none;
+        }
+
+        div {
+            background-color: #09f;
+            width: 200px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .highlight {
+            background-color: #090;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("div").mouseover(function () {
+                $(this)
+                    .addClass("highlight")
+                    .children("ul")
+                    .show()
+                    .end()
+                    .siblings()
+                    .removeClass("highlight")
+                    .children("ul")
+                    .hide();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <h3>导航1</h3>
+        <ul>
+            <li>内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+        </ul>
+    </div>
+    <div>
+        <h3>导航2</h3>
+        <ul>
+            <li>内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+        </ul>
+    </div>
+    <div>
+        <h3>导航3</h3>
+        <ul>
+            <li>内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+        </ul>
+    </div>
+</body>
+
+</html>

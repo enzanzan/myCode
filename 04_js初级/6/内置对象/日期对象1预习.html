@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建日期对象  日期对象存储当前时间
+        var myDate=new Date();
+        var year=myDate.getFullYear();
+        var month=myDate.getMonth()+1;
+        var dates=myDate.getDate();
+        var hours=myDate.getHours();
+        var minutes=myDate.getMinutes();
+        var seconds=myDate.getSeconds();
+        // 日期格式化  按照自己的格式输出
+        document.write(year+"年"+month+"月"+dates+"日"+hours+":"+minutes+":"+seconds);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

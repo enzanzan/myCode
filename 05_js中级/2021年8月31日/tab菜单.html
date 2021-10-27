@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 480px;
+            border:2px solid #f00;
+            position: absolute;
+            left:450px;
+        }
+        #div1 div{
+            background-color: #09f;
+            width: 400px;
+            height: 400px;
+            position: relative;
+            top: 50px;
+            display: none;
+            
+        }
+        input{
+            float: left;
+            width: 100px;
+            height: 40px;
+            border: 1px solid #09f;
+        }
+        #bt1{
+            position: absolute;
+            left:0px;
+            top:0px;
+        }
+        #bt2{
+            position: absolute;
+            left:150px;
+            top:0px;
+        }
+        #bt3{
+            position: absolute;
+            left:300px;
+            top:0px;
+        }
+        .active{
+            background-color: #090;
+            color:#fff;
+        }
+    </style>
+    <script src="js/addEvent.js"></script>
+    <script>
+        addEvent(window,"load",function(){
+            var div1=document.getElementById("div1");
+            var inputs=div1.getElementsByTagName("input");
+            var divs=div1.getElementsByTagName("div");
+            for(var i=0;i<inputs.length;i++){
+            addEvent(inputs[i],"click",function(){
+                for(var j=0;j<inputs.length;j++){
+                    inputs[j].className="";
+                    divs[j].style.display="none";
+                }
+                this.className="active";
+                if([-1,]){
+                    this.nextElementSibling.style.display="block";
+                }else{
+                    this.nextSibling.nextSibling.style.display="block";
+                }
+            })
+            }
+        })
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="button" id="bt1" value="按钮一">
+        <div style="display: block;">内容一</div>
+        <input type="button" id="bt2" value="按钮二">
+        <div>内容二</div>
+        <input type="button" id="bt3" value="按钮三">
+        <div>内容三</div>
+    </div>
+</body>
+</html>

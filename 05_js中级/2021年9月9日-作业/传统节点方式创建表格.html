@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传统节点方式创建表格</title>
+    <style>
+        .datalist,td{
+            border:1px solid #09f;
+            border-collapse: collapse;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var tab=document.createElement("table"); //创建一个table节点
+            var tah=document.createElement("thead");  //创建一个thead节点
+            var tay=document.createElement("tbody");  //创建一个tbody节点
+            var taf=document.createElement("tfoot");  // 创建一个tfoot节点
+
+            // 将创建的节点插入到table节点上
+            tab.appendChild(tah);
+            tab.appendChild(tay);
+            tab.appendChild(taf);
+
+            // 在当前tbody节点上创建一个tr节点
+            var tr=tay.insertRow();
+
+            for(var i=1;i<=10;i++){
+                // 在当前tr节点上创建td节点
+                var td=tr.insertCell();
+                td.appendChild(document.createTextNode(i));
+            }
+            // 将table放入body中
+            document.body.appendChild(tab);
+            tab.className="datalist";
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 

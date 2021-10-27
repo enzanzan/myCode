@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            // eval函数功能：将字符串当做js直接运行
+            var j='{"sttus":"10001","mag":"ok","data":[{"id":"1","name":"tom","age":19,"sex":"男"},{"id":"2","name":"jarry","age":20,"sex":"男"},{"id":"3","name":"susan","age":19,"sex":"女"},{"id":"4","name":"zanzan","age":19,"sex":"女"}]}';
+            // 将json字符串转换为js对象
+            var o=eval("("+j+")");
+            console.log(j);
+            console.log(o);
+
+            //如何遍历json转换完的js对象的数据部分
+            var str="<ul>";
+            for(var i in o.data){
+                str=str+'<li>学号:'+o.data[i].id
+                            +' 姓名:'+o.data[i].name
+                            +' 年龄:'+o.data[i].age
+                            +' 性别:'+o.data[i].sex
+                            +"</li>";
+            }
+            console.log(str);
+            div1.innerHTML=str+"<ul>";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</html>

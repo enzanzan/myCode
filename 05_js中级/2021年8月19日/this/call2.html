@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test(x,y){
+            alert(x+y);
+            alert(this);    //改变函数内this指向
+        }
+        test.call("我是帅哥",1,3);  //"我是帅哥"--指定的对象--字符串
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onkeydown</title>
+    <script src="../js/addEvent.js"></script>
+    <script>
+        addEvent(window,"load",function(){
+            var t1=document.getElementById("t1");
+            addEvent(t1,"keyup",function(){
+                console.log(t1.value);
+                console.log(t1.value.length);
+            })
+        })
+    </script>
+</head>
+<body>
+    <textarea id="t1" cols="30" rows="10">
+
+    </textarea>
+</body>
+</html>

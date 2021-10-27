@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            // 通过标签选择器--获取DOM对象组成的数组
+            var p1=document.querySelectorAll("p");
+            console.log("标签选择器p",p1);
+            // 通过后代选择器--获取DOM对象组成的数组
+            var p1=document.querySelectorAll("div p");
+            console.log("后代选择器",p1);
+            // // 通过直接子元素选择器 
+            var p1=document.querySelectorAll("div>p");
+            console.log("直接子元素选择器",p1);
+            // // 通过类选择器
+            var p2=document.querySelectorAll(".special");
+            console.log("类选择器",p2);
+            // // 通过id选择器
+            var p4=document.querySelectorAll("#p4");
+            console.log("通过id选择器获取",p4);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <p>测试哈哈哈111</p>
+        <p class="special">测试哈哈哈222</p>
+        <p id="p4">测试哈哈哈333</p>
+        <p>测试哈哈哈444</p>
+    </div>
+</body>
+</html>

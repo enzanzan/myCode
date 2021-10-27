@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义事件</title>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function () {
+            $("div").bind("myEvent", function (e, x, y) {
+                alert(x + y);
+                console.log("你触发了myEvent事件")
+                console.log(e)
+
+            })
+            $("input").click(function (e, x, y) {
+                // 模拟触发
+                $("div").trigger("myEvent", [100, 200])
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" value="点击触发自定义事件">
+    <div>测试哈哈</div>
+</body>
+
+</html>

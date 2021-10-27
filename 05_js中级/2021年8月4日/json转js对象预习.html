@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 从后台得到数据
+        var str=
+        '{"status":"100001","message":"success","data":[{"id":"10001","name":"tom","age":19,"sex":"男"},{"id":"10002","name":"jarry","age":21,"sex":"男"},{"id":"10003","name":"susan","age":21,"sex":"女"}]}';
+        var obj=eval("("+str+")");
+        console.log(obj);
+        // 遍历json中的数据部分data
+        var myData=obj.data;
+        for(var i in myData){
+            console.log(
+                "学号:"+myData[i].id+" "
+               +"姓名:"+myData[i].name+" "
+               +"年龄:"+myData[i].age+" "
+               +"性别:"+myData[i].sex+" "
+            );
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

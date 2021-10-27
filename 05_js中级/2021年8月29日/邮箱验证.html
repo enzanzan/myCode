@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tips{
+            font-size: 12px;
+            color:#f00;
+        }
+    </style>
+    <script src="js/addEvent3.js"></script>
+    <script>
+        addEvent(window,"load",function(){
+            var email=document.getElementById("email");
+            var tips=document.getElementById("tips");
+            addEvent(email,"change",function(){
+                var reg=/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+                if(!(reg.test(email.value))){
+                    tips.innerText="不是邮箱格式";
+                }
+            addEvent(email,"focus",function(){
+                tips.innerText="";
+            })    
+            })          
+        })
+    </script>
+</head>
+<body>
+    email:
+    <input type="text" id="email">
+    <span id="tips">*</span>
+</body>
+</html>

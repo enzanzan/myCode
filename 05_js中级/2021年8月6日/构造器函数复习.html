@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个构造器函数
+        function Student(name,sex,age){
+            // this 新new Object()对象
+            this.name=name;
+            this.sex=sex;
+            this.age=age;
+            this.study=function(){
+                alert("持之以恒！");
+            }
+        }
+        // 使用构造器函数创建一个对象
+        var s1=new Student("tom","男",19);
+        console.log(s1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: #09f;
+            width: 200px;
+            height: 200px;
+        } 
+        p{
+            background-color: #ff0;
+            color:#fff;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            var bt1=document.getElementById("bt1");
+            bt1.onclick=function(){
+                //创建一个空的p对应的DOM元素节点--在内存
+                var p=document.createElement("p");
+                console.log("p",p);
+                p.innerText="我是帅哥";                
+                // 问题--上面的操作全是在内存中完成的--浏览器看不到
+                // 浏览器上要看到，必须将我们创建的DOM对象添加已经渲染完成的DOM对象
+                // 引发重绘--重新渲染
+                div1.appendChild(p);
+                // js中最耗性能的操作就是DOM重绘
+                // 比如执行一次DOMC重绘--相当于运行普通代码4000条
+                //1:4000
+                // 为了提升运行效能--尽量减少DOM刷新次数--重绘次数
+           }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="bt1" value="点击div内部的后面添加一个p">
+    <div id="div1">测试哈哈</div>
+</body>
+</html>

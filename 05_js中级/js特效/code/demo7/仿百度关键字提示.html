@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>百度关键字提示</title>
+<style>
+#bt1{
+	position:absolute;
+	top:200px;
+}
+.blue{
+	color:blue;
+	font-weight:bold;
+	font-size:12px;
+	cursor:pointer;
+	width:230px;
+	box-shadow:#666;
+}
+.blue a{
+	text-decoration:none;
+	color:blue;
+	font-weight:normal;
+	float:right;
+}
+#info{
+	border:0px solid #ccc;
+	width:230px;
+}
+</style>
+<script>
+window.onload=function(){
+  var keywords=document.getElementById("keywords");
+  var bt1=document.getElementById("bt1");
+  var info=document.getElementById("info");
+  var i=document.cookie.split("; ").length;
+  bt1.onclick=function(){//点击百度一下存储cookie变量
+	  var myDate =new Date();
+      var day10ms=myDate.getTime()+10*24*3600*1000;
+          myDate.setTime(day10ms);
+      var data="keywords"+i+"="+encodeURI(keywords.value);
+	  i++;
+      document.cookie=data+"; expires="+myDate.toGMTString();	  
+ 
+
+
+  if(document.cookie!=""){//cookie不为空才显示提示
+  var flag=true;
+  keywords.onkeyup=keywords.onkeypress=function(){
+	   if(flag){
+		  info.style.borderWidth="1px"; 
+		  flag=false;
+		   }
+	   info.innerHTML="";
+	   var data=document.cookie.split("; ");
+     for(var i=0;i<data.length;i++){
+	   var datasplit=data[i].split("=");
+	   //如果cookie变量值中包含关键字或不为空，显示提示	
+	   if(decodeURI(datasplit[1]).indexOf(keywords.value)!=-1 && keywords.value!=""){	    
+		    info.innerHTML+="<div class='blue'>"+decodeURI(datasplit[1])+"<a href='javascript:void(0);' data-id="+(i+1)+">删除</a></div>";
+			for(var j=0;j<info.children.length;j++){
+				//给提示信息绑定事件
+			   info.children[j].onclick=function(){
+				    keywords.value=this.innerText.substr(0,this.innerText.length-2);   
+			   };
+			   info.children[j].onmouseover=function(){
+				    this.style.background="#ccc";  
+			   };
+			   info.children[j].onmouseout=function(){
+				    this.style.background="#fff";  
+			   };
+			   //给提示信息的子元素a标记绑定事件，删除当前div和清除cookie
+			   info.children[j].children[0].onclick=function(e){
+				    this.parentNode.outerHTML="";
+					var myDate=new Date();
+					myDate.setTime(myDate.getTime()-1000);
+					document.cookie="keywords"+this.getAttribute("data-id")+"=''; expires="+myDate.toGMTString();
+					var e=e||window.event;
+					if(-[1,]){
+						e.stopPropagation();
+						}else{
+							e.cancleBubble=true;
+							}
+			   };	
+			}
+	   }
+   }
+  };
+  }
+  
+   };
+};
+</script>
+</head>
+
+<body>
+<div>
+  <input type="text" id="keywords" size="30">
+  <div id="info"></div>
+  <input type="button" id="bt1" value="百度一下">
+</div>
+</body>
+</html>

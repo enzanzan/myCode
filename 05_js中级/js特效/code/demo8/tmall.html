@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tamll</title>
+<style>
+body,h3{
+	margin:0px;
+	padding:0px;
+	background:#56C0FB;
+}
+#top{background:#ccc;}
+#logo,#content{background:#eee;width:1290px; position:relative;left:50%; margin-left:-645px;}
+#logo{height:200px;}
+#banner{ background:#ff0;height:500px;}
+#content div{
+	height:500px;
+	margin-bottom:10px;
+	background:#e5e5e5;
+	display:none;
+}
+#content div {
+	text-align:center;
+	
+}
+#content h3{background:#090;color:#fff;font-weight:bold;}
+#content ul.info{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+#content ul.info li{
+	float:left;
+	margin-right:10px;
+}
+</style>
+<script>
+(function(){
+	 var y=500;
+window.onscroll=function(){
+   var content=document.getElementById("content");
+   var divs=content.getElementsByTagName("div");
+   var k=0;//div控制-向后台传递请求参数
+   //兼容IE6/7/8
+   var scrollY=0;
+   if(window.pageYOffset){
+	 scrollY=window.pageYOffset;
+	}else{
+		scrollY=document.documentElement.scrollTop;
+		  }
+	   if(scrollY>=y){
+		   y=y+500;		   
+			 k=Math.floor(y/500)+k;
+           if(k>8){
+			   k=8;
+			   }
+		   divs[k].style.display="block";
+		   if(window.XMLHttpRequest){
+			  var http=new XMLHttpRequest();   
+			}else{
+			  var http=new ActiveXObject("Microsoft.XMLHTTP");
+		    }			 
+			var post_data="infoid="+k;
+			http.open("POST","info.php");
+			http.setRequestHeader("content-type","application/x-www-form-urlencoded");
+			http.onreadystatechange=function(){
+			   if(http.readyState==4 && http.status==200){
+				   var data=eval("("+http.responseText+")"); 
+				   var str="<ul class='info'>";
+				   for(var j=0;j<data.length;j++){
+					   str+="<li><img src=images/"+data[j].imgpath+" width=200><br>"+data[j].intro+"</li>";
+				   }  
+				   divs[k].innerHTML=str+"</ul>";
+			
+			   }	
+		    };
+			http.send(post_data);
+	   }   
+ 
+  
+};
+})();
+  
+</script>
+</head>
+
+<body>
+<div id="top">顶端</div>
+<div id="logo">logo</div>
+<div id="banner">banner</div>
+<div id="content">
+    <div style="display:block;">
+        <h3>title1</h3>
+        <p>
+           content
+        </p>       
+    </div>
+    <div style="display:block;">
+        <h3>title2</h3>
+        <p>
+           content
+        </p>       
+     </div>
+     <div>
+        <img src="images/loading.gif">
+     </div>
+     <div>
+        <img src="images/loading.gif">
+     </div>
+     <div>
+        <img src="images/loading.gif">
+     </div>
+     <div>
+        <img src="images/loading.gif">
+     </div>
+     <div>
+        <img src="images/loading.gif">
+     </div>
+     <div>
+        <img src="images/loading.gif">
+     </div>
+     <div>
+        <img src="images/loading.gif">
+     </div>
+     <div>
+        <img src="images/loading.gif">
+     </div>
+     <div>
+        <img src="images/loading.gif">
+     </div>
+</div>
+</body>
+</html>

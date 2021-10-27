@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			// 封装一个函数
+			function setcookie(name,value,day){
+				var data=name+"="+encodeURI(value);
+				var myDate=new Date();
+				// 获取当前日期对象的时间戳
+				var ms=myDate.getTime();
+				// 得到几天以后的日期对象的时间戳
+				var dayms=ms+day*24*3600*1000;
+				// 几天以后的日期和时间
+				myDate.setTime(dayms);
+				// 创建cookie
+				document.cookie=data+"; expires="+myDate.toGMTString();
+			}
+			setcookie("x",100,10);
+			setcookie("userName","赵四",10);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

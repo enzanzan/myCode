@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类选择器的封装</title>
+    <style>
+        /* #div1{
+            background-color: #09f;
+        } */
+        .one{
+            border:1px solid #f00;
+        }
+        .two{
+            color: #ff0;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">测试哈哈</div>
+</body>
+<script>
+    var div1=document.getElementById("div1");
+    function addClass(elem,nClass){
+        elem.className+=" "+nClass;
+    }
+    function removeClass(elem,dClass){
+        var s=elem.className;
+        if(s.indexOf(dClass)==-1){
+            alert("没有添加该类，无法删除！")
+        }else{
+            elem.className=elem.className.replace(dClass,"");
+        }
+    }
+        
+</script>
+</html>

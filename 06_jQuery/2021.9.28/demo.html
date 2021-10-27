@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1 {
+            background: #080;
+            color: #fff;
+        }
+
+        #div2 {
+            background: #ff0;
+            border: 5px solid #00f;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var p1 = document.getElementsByTagName("p")[0];
+            var div1 = document.getElementById("div1");
+            var btn = document.getElementById("btn");
+            btn.onclick = function () {
+                div2.childNodes[0].appendChild(div1);//下标从0开始
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">我是div1</div>
+    <div id="div2">
+        <p>第一个p，将被匹配元素替换</p>
+        <p align="center">第二个p哈哈</p><span>测试span</span>
+    </div>
+    <div id="div3">第三个div</div>
+    <input type="button" id="btn" value="将div1追加到div2第一个儿子的内部的后面">
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>敏感词替换</title>
+</head>
+<script src="js/addEvent.js"></script>
+<script>
+    addEvent(window, "load", function () {
+        var t1 = document.getElementById("t1");
+        var s1 = document.getElementById("s1");
+        var bt1 = document.getElementById("bt1");
+        var reg = /傻逼|你他妈|真他妈|操你妈|操他妈|日你妈|狗日的|操你大爷|妈逼|你麻痹|麻痹的|妈了个逼/g;
+
+        addEvent(t1, "input", function () {
+            t1.value = t1.value.replace(reg, "**");
+            s1.innerHTML = t1.value.length;
+        })
+
+    })
+</script>
+
+<body>
+    <div id="container">
+        <textarea name="" id="t1" cols="80" rows="10"></textarea>
+        已输入<span id="s1">0</span>字
+        <br>
+        <input type="button" id="bt1" value="发布">
+    </div>
+</body>
+
+</html>

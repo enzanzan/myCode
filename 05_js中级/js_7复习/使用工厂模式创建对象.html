@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<script>
+    function Person(name, qq) {
+        var obj = new Object();
+        obj.name = name;
+        obj.qq = qq;
+        obj.showName = function () {
+            alert("姓名:" + this.name);
+        }
+        obj.showQq = function () {
+            alert("QQ:" + this.qq);
+        }
+        return obj;
+    }
+    var obj1 = Person("tom", "123456");
+    obj1.showName();
+    obj1.showQq();
+</script>
+
+<body>
+
+</body>
+
+</html>

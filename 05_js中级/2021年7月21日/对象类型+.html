@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // a和b 是回调函数
+        function a(){ //#2222
+            return 1;
+        }
+        function b(){ //#3333
+            return 2;
+        }
+        function test(x,y){
+            return x()+y();
+        }
+        // 回调函数:被当做函数调用的实参传递的函数 
+        alert(test(a,b));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

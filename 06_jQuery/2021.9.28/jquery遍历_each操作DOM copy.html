@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery遍历_each操作DOM</title>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function () {
+            var obj = { name: "tom", age: 19, sex: "男" };
+            var str = "<ul>";
+            $.each(obj, function (key, value) {
+                str += "<li>" + key + ":" + value + "</li>";
+            })
+            $("div").html(str + "</ul>");
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

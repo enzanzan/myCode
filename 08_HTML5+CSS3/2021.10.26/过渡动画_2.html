@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡动画_2</title>
+    <style>
+        img {
+            transform: translate(1000px, 0px);
+        }
+
+        img {
+            transition: transform 2s ease-in 0s;
+        }
+
+        img:hover {
+            transform: translate(100px, 0px);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <img src="img/run1.gif" width="150px">
+    </div>
+</body>
+
+</html>

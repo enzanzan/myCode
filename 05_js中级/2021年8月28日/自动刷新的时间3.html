@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/addEvent.js"></script>
+    <script>
+        
+        addEvent(window,"load",function(){
+            var div1=document.getElementById("div1");
+            // 获得当前日期对象
+            div1.innerText=new Date().toLocaleString();
+            setInterval(function(){
+                div1.innerText=new Date().toLocaleString();
+            },1000);
+        }); 
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

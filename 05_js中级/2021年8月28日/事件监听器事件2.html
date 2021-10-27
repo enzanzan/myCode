@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: #09f;
+            width: 200px;
+            height: 200px;
+            color:#fff;
+            cursor: pointer;
+        }
+    </style>
+    <script src="js/addEvent2.js"></script>
+    <script>
+        addEvent(window,"load",function(){
+            var div1=document.getElementById("div1");
+                addEvent(div1,"click",function(){
+                    alert("你触发了click事件1");
+                })
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

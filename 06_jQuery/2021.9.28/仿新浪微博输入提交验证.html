@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿新浪微博输入提交验证</title>
+    <style>
+        body {
+            background-color: #f6f6f6;
+        }
+
+        #content {
+            width: 605px;
+            margin: 100px auto;
+            text-align: center;
+            /* border: 1px solid #f00; */
+        }
+
+        #t1 {
+            width: 600px;
+            height: 90px;
+            top: 30px;
+            border: 1px solid #cccccc;
+            border-radius: 2px;
+            resize: none;
+        }
+
+        #bt1 {
+            background-color: #ffc09f;
+            border: 1px solid #fbbd9e;
+            color: #fff;
+            width: 70px;
+            height: 28px;
+            border-radius: 2px;
+            cursor: pointer;
+            margin-left: 535px;
+        }
+
+        .s1 {
+            display: none;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div class="s1" align="right">已输入<span></span>字</div>
+        <textarea id="t1"></textarea>
+        <br>
+        <input type="button" id="bt1" value="发布">
+    </div>
+</body>
+<script>
+    var s1 = document.getElementById("s1");
+    var t1 = document.getElementById("t1");
+    var bt1 = document.getElementById("bt1");
+
+</script>
+
+</html>

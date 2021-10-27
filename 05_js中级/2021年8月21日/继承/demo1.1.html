@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 父类A
+        function A(){
+            this.a="abc";
+        }
+        A.prototype.f=function(){
+            alert(this.a);
+        }
+        // 子类B
+        function B(){
+            // 继承父类的属性   
+            A.call(this);
+        }
+        // 继承父类的方法--原型拷贝
+        for(var i in A.prototype){
+            B.prototype[i]=A.prototype[i];
+        }
+        var obj=new B();
+        alert(obj.a);
+        obj.f();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

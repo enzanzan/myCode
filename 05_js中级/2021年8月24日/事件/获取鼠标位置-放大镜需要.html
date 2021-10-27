@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 10px;
+            padding:10px;
+        }
+        #div1{
+            background-color: #09f;
+            color:#fff;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            // onmousemove--鼠标滑动持续触发
+            var div1=document.getElementById("div1");
+            div1.onmousemove=function(){
+                console.log("触发了onmousemove");
+                // 获取事件对象
+                var e = e || window.event;
+                console.log("在div横轴坐标",e.offsetX,"在div纵轴坐标",e.offsetY);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">测试哈哈</div>
+</body>
+</html>

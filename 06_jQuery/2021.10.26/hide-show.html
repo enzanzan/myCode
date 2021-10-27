@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hide</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: #090;
+        }
+    </style>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function () {
+            var flag = true;
+            $("input").click(function () {
+                if (flag) {
+                    $("div").hide(3000, function () {
+                        $("input").val("显示");
+                        flag = false;
+                    });
+                } else {
+                    $("div").show(3000, function () {
+                        flag = true;
+                        $("input").val("隐藏");
+                    });
+                }
+            })
+
+
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" value="隐藏">
+    <div id="div1"></div>
+</body>
+
+</html>

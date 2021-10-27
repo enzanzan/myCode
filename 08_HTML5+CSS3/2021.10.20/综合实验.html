@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素综合实验</title>
+    <style>
+        ul.tab {
+            list-style: none;
+            margin: 0px auto;
+            padding: 0px;
+            width: 800px;
+        }
+
+        ul.tab a {
+            font: 16px/32px 微软雅黑;
+            color: #404040;
+            text-decoration: none;
+        }
+
+        ul.tab a:hover {
+            color: #ff3333;
+        }
+
+        ul.tab li {
+            position: relative;
+            padding-left: 10px;
+        }
+
+        ul.tab li:after {
+            /* 空 */
+            content: "\20";
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: #ccc;
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            margin-top: -2px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="tab">
+        <li><a href="#">王正谱同志任河北省委副书记</a></li>
+        <li><a href="#">最新公示！河北248村要有省级荣誉，祝贺</a></li>
+        <li><a href="#">2021年10月19日河北省新型冠状病毒肺炎疫情情况</a></li>
+        <li><a href="#">京津冀气象部门联合开展区域红叶观赏期预测</a></li>
+        <li><a href="#">河北4地紧急寻人 北京新增一确诊病例曾乘火车途经河北4站</a></li>
+        <li><a href="#">今年成人高考将于10月23日至24日进行</a></li>
+    </ul>
+</body>
+
+</html>

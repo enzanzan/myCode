@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            border:2px solid  #09f;
+            width: 300px;
+            height: 360px;
+            position: relative;
+            margin: 0px auto;
+        }
+        input{
+            width:50px;
+        }
+        input#one{
+            position:absolute;
+            top:0px;
+            left:0px;
+        }
+        input#two{
+            position:absolute;
+            top:0px;
+            left:55px;
+        }
+        input#three{
+            position:absolute;
+            top:0px;
+            left:110px;
+        }
+        #div1 div{
+            background-color: #ff0;
+            margin-top:40px;
+            height:300px;
+            display: none;
+        }
+        /* 高亮类 */
+        .highlight{
+            background-color: #99f;
+            color:#fff;
+        }
+    </style>  
+    <script>
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            var inputs=div1.getElementsByTagName("input");
+            var divs=div1.getElementsByTagName("div");
+
+            // 给input绑定循环事件
+            for(var i=0;i<inputs.length;i++){
+                inputs[i].onclick=function(){                                        
+                    for(var j=0;j<inputs.length;j++){
+                        // 清除所有按钮的class类
+                        inputs[j].className="";
+                        // 隐藏所有div
+                        divs[j].style.display="none";
+                    }
+                    // 给当前点击的按钮使用highlight类
+                    this.className="highlight";
+                    // 兼容
+                    if(window.addEventListener){
+                        // IE9+
+                        this.nextElementSibling.style.display="block";
+                    }else{
+                        // IE6/7/8
+                        this.nextSibling.nextSibling.style.display="block";
+                    }
+                    
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="button" value="按钮1" id="one">
+        <div style="display:block";>内容1</div>
+        <input type="button" value="按钮2" id="two">
+        <div>内容2</div>
+        <input type="button" value="按钮3" id="three">
+        <div>内容3</div>
+    </div>
+</body>
+</html>

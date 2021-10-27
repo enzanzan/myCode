@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关键字搜索</title>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 30px;
+            margin: 30px 0px 15px 900px;
+        }
+
+        #bt1,
+        #bt2 {
+            background-color: #3B78DD;
+            border: none;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+            height: 22px;
+        }
+
+        #bt1:hover,
+        #bt2:hover {
+            background-color: #1760D7;
+        }
+
+        #container {
+            width: 1000px;
+            height: 500px;
+            margin: 30px auto;
+            text-indent: 32px;
+        }
+
+        .style {
+            color: #f00;
+        }
+    </style>
+    <script src="js/addEvent.js"></script>
+    <script>
+        addEvent(window, "load", function () {
+            var t1 = document.getElementById("t1");
+            var bt1 = document.getElementById("bt1");
+            var bt2 = document.getElementById("bt2");
+            var container = document.getElementById("container");
+            var reg = /篮球/g;
+            addEvent(bt1, "click", function () {
+                if (reg.test(t1.value)) {
+                    alert(t1.value)
+                } else {
+                    alert("对不起，没有搜到此关键字！")
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <input type="text" id="t1">
+        <input type="button" id="bt1" value="搜索">
+        <input type="button" id="bt2" value="取消">
+    </div>
+    <div id="container">
+        最近我在打篮球，我觉得打篮球很好玩。而且篮球不止是好玩，还有很多好处呢！第一，可以让自己长得更高；第二，能锻炼身体，不容易生病；第三，多出点汗，还可以减肥呢……看吧，篮球是一种极好的运动。我们班的教练姓郭，他可辛苦啦，忙了这儿忙那儿。
+
+        自从学习了篮球以后，我觉得自己长高了很多呢！每天早上7点多就开始训练，这段时间可真把宝宝给累死了。不过那里的同学很友好，我还新交了4个朋友，“露露”、“语语”、“妙妙”、“王子”。哈哈，我取的外号不错吧。对了，我有个朋友在那儿，叫吴左左，他很淘气，几次都把我的球给弄掉。
+
+        我的梦想就是长姚明叔叔那么高。怎么样，小朋友们，你们也要多打篮球哦！锻炼好身体，以后保卫祖国。谁还敢欺负我们大中国，看我不把你打得落花流水，满地找牙。
+    </div>
+</body>
+
+</html>

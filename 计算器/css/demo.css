@@ -1,0 +1,65 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.dome {
+    width: 400px;
+    height: 430px;
+    margin: 50px auto;
+    background: #FAEBD7;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.dome input {
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.dome button {
+    width: 90px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    margin: 5px;
+    float: left;
+    font-size: 30px;
+    border-radius: 8px;
+}
+
+.dome button:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 255, 0.4);
+}
+
+#result {
+    background-color: #3B78DD;
+    height: 132px;
+}
+
+#result:hover {
+    background: #1760D7;
+}
+
+#noFloat1,
+#noFloat2,
+#noFloat3 {
+    float: none;
+    position: absolute;
+    top: 385px;
+    left: 20px;
+}
+
+#noFloat2 {
+    left: 120px;
+}
+
+#noFloat3 {
+    left: 220px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" cellspacing="10">
+        <form action="a.html" name="myform" method="POST">
+            <caption>欢迎注册</caption>
+            <tr>
+                <td>账号:</td>
+                <td><input type="text" name="userName"></td> 
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+            <tr>
+                <td>性别:</td>
+                <td>
+                    <input type="radio" name="sex" value="0">男
+                    <input type="radio" name="sex" value="1">女
+                </td>
+            </tr>
+            <tr>
+                <td>上传头像:</td>
+                <td><input type="file" name="ufile"></td>                   
+            </tr>
+            <tr>
+                <td>课程:</td>
+                <td>
+                    <input type="checkbox" name="kemu" value="yw" checked>语文
+                    <input type="checkbox" name="kemu" value="sx">数学
+                    <input type="checkbox" name="kemu" value="yy">英语
+                </td>
+            </tr>
+            <tr>
+                <td>就业城市:</td>
+                <td>
+                    <select name="city">
+                        <option value="">请选择城市</option>
+                        <option value="hz">杭州</option>
+                        <option value="bj">北京</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="center">
+                    <input type="submit" name="submit" value="登录">
+                    <input type="submit" name="reset" value="重置">
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var bt1=document.getElementById("bt1");
+            bt1.onclick=function(e){
+                // IE9+有e(形参，名字随便起)
+                // IE6/7/8没有e
+                var e=e || window.event;
+                console.log(e);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="bt1" value="点我试试">
+</body>
+</html>

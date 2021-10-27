@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var o=["轩铭","恩铭","赞赞","赞宝","铭宝","铭铭","铭铭儿","赞赞儿","铭宝儿","赞宝儿","赞","铭","宝","儿","mm","zz","ming","zan","mingm","zanz","铭儿","赞儿"];
+        var names="";
+        var p=0;
+        for(var i=1;i<=10;i++){
+            p=Math.ceil(Math.random()*1000)%(22-i);
+            names=names+" "+o.splice(p,1);
+        }
+        document.write(names);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

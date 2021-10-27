@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            border:2px solid #f00;
+            margin: 0px auto;
+        }
+        #div1 div{
+            background-color: #09f;
+            width:200px;
+            height:170px;
+            display: none;
+        }
+        .heightlight{
+            background-color: #333;
+            color:#fff;
+            border:3px solid #090;
+            border-bottom:none;
+            
+        }
+    </style>
+    <script>
+        // 获得DOM对象
+        window.onload=function(){
+            var div1=document.getElementById("div1");
+            var inputs=div1.getElementsByTagName("input");
+            var divs=div1.getElementsByTagName("div");
+
+            for(var i=0;i<inputs.length;i++){
+                // 添加自定义属性
+                inputs[i].index=i;
+                // 循环绑定事件
+                inputs[i].onclick=function(){
+                    // 清空操作
+                    for(var j=0;j<inputs.length;j++){
+                        // 让所有的input去掉类
+                        inputs[j].className="";
+                        // 让所有div都隐藏
+                        divs[j].style.display="none";
+                    }
+                    // 给当前单击的button加类
+                    this.className="heightlight";
+                    // 让对应的div显示内容
+                    divs[this.index].style.display="block";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="button" value="按钮1">
+        <input type="button" value="按钮2">
+        <input type="button" value="按钮3">
+        <div style="display:block">小</div>
+        <div>天</div>
+        <div>才</div>
+    </div>
+</body>
+</html>

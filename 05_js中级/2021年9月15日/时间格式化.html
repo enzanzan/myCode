@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间格式化</title>
+    <script>
+
+        var myDate = new Date();
+        // 分别获取日期时间的DOM对象
+        var year = myDate.getFullYear();
+        var month = myDate.getMonth() + 1;
+        var date = myDate.getDate();
+        var hours = myDate.getHours();
+        var minutes = myDate.getMinutes();
+        var seconds = myDate.getSeconds();
+
+
+        document.write(year + "年" + month + "月" + month + "月" + hours + "时" + minutes + "分" + seconds + "秒");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

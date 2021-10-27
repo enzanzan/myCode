@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>仿新浪微博输入提交验证</title>
+<style>
+span{
+	font-size:12px;
+	line-height:15em;
+	color:#666;
+}
+span#tips{
+	font-weight:bold;
+	font-family:poller-one;
+}
+span.red{
+	color:#f00;
+}
+</style>
+<script>
+window.onload=function(){
+   var t1=document.getElementById("t1");
+   var tips=document.getElementById("tips");
+   var bt1=document.getElementById("bt1");
+   t1.onkeyup=t1.onkeypress=function(){
+	   if(this.value.length<=140){
+		  tips.innerHTML="还可以输入"+(140-this.value.length)+"字";   
+	   }else{
+		   bt1.onclick=function(){
+			   var i=1;
+	           var sid=setInterval(function(){
+				  switch(i++){
+					  case 1:
+					   t1.style.backgroundColor="#dfaaaa";
+				       break;
+					  case 2:
+					   t1.style.backgroundColor="#d46161";
+				       break;
+					  case 3:
+					   t1.style.backgroundColor="#f00";
+				       break;
+					  case 4:
+					   t1.style.backgroundColor="#dfaaaa";
+				       break;
+				  }
+			  },500);
+			  if(i==4){
+				  clearInterval(sid);
+				}
+           };	
+		  tips.innerHTML="已超出<span class='red'>"+(this.value.length-140)+"</span>字"; 
+	   }
+   };
+   
+  
+};
+</script>
+</head>
+
+<body>
+
+<textarea type="text" id="t1" cols="50" rows="10"></textarea><span id="tips">还可以输入140字</span>
+<input type="button" id="bt1" value="发布">
+</body>
+</html>

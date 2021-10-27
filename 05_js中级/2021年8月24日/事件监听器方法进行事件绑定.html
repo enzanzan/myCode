@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: #09f;
+            width: 200px;
+            height: 200px;
+            color:#fff;
+            cursor:pointer;
+        }
+    </style>
+    <script>
+        //IE9+
+        if(window.addEventListener){
+            window.addEventListener("load",function(){
+            //window.onload事件
+            var div1=document.getElementById("div1");
+            //绑定事件
+            div1.addEventListener("click",function(){
+                alert("你触发了click事件1");
+            })
+            div1.addEventListener("click",function(){
+                alert("你触发了click事件11");
+            })
+        }) ;
+        }else{
+            //IE6/7/8
+            window.attachEvent("onload",function(){
+            //window.onload事件
+            var div1=document.getElementById("div1");
+            //绑定事件
+            div1.attachEvent("onclick",function(){
+                alert("你触发了click事件22");
+            })
+            div1.attachEvent("onclick",function(){
+                alert("你触发了click事件2");
+            })
+        }) ;
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        测试哈哈
+    </div>
+</body>
+</html>

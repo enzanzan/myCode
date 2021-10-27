@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sina调查问卷</title>
+    <style>
+        body,table.form{
+            margin:0px;
+            padding:0px;
+        }
+        table.outside{                  /* 外层表格 */
+            background: url(img/bg1.jpg);
+            font-size: 12px; 
+            margin:5px 5px;        
+        }
+        td.title{                       /* 表格标题 */
+            color:#ffffff;
+            font-weight: bold;
+            text-align:center;
+            padding-top:3px;
+            padding-bottom:0px;
+        }
+        td.tdoutside{
+            padding:0px 1px 4px 1px;
+        }
+        table.inside{                    /* 内层表格 */
+            width:280px;
+            font-size:12px;
+            padding:0px 5px;
+            margin-top:2px;
+        }
+        td.tdinside{                     /* 内容选项 */
+            background: #FFD455;
+            padding:7px 0px 7px 10px;
+        }
+        input{
+            font-size:12px
+        }
+        a{
+            text-decoration: underline;
+            color:#333;
+        }
+    </style>
+</head>
+<body>
+    <table class="outside" border="0" cellspacing="0"> 
+        <tr><td class="title">热点调查</td></tr>
+        <tr>
+            <td class="tdoutside">
+                <form action="#" method="POST"></form>
+                <table class="inside" border="0" cellspacing="0">
+                    <tr>
+                        <td class="tdinside">在姚明缺阵麦蒂领军的情况下，火箭队的胜率是<br>
+                        <input type="radio" name="q_498" value="2749">超过60% <br>
+                        <input type="radio" name="q_498" value="2750">50%到60% <br>
+                        <input type="radio" name="q_498" value="2751">40%到50% <br>
+                        <input type="radio" name="q_498" value="2752">30%到40% <br>
+                        <input type="radio" name="q_498" value="2753">30%以下 <br>
+                        <input type="submit" value="提交">
+                        <input type="button" name="viewresult" value="查看">
+                            <a href="#">新浪-篮球先锋报联合评选</a>
+                    </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

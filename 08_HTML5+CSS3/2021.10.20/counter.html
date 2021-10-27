@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <style>
+        p:before {
+            content: "第"counter(count) "章 ";
+            color: #078ebf;
+            font-weight: bold;
+        }
+
+        p {
+            counter-increment: count;
+        }
+    </style>
+</head>
+
+<body>
+    <p>工作原理</p>
+    <p>文件操作</p>
+    <p>颜色模式</p>
+    <p>调色</p>
+    <p>工具</p>
+    <p>演示</p>
+    <p>样式</p>
+    <p>实现</p>
+</body>
+
+</html>

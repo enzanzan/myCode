@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: #09f;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            border-radius: 50px;
+            position: fixed;
+            top: 10px;
+        }
+    </style>
+    <script src="js/addEvent.js"></script>
+    <script src="js/TweenLite.js"></script>
+    <script>
+        addEvent(window, "load", function () {
+            var div1 = document.getElementById("div1");
+            var i = 1;
+            addEvent(div1, "click", function () {
+                TweenLite(div1, 2, {
+                    alpha: 60, left: 100, top: 200, ease: Easing.Bounce.easeOut, delay: 1, onUpdate: function () {
+                        console.log("被调用了" + (i++) + "次");//delay:延迟多少秒后执行 
+                    }, onComplete: function () {
+                        alert("动画执行完毕！"); // TweenLite() 执行动画队列
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

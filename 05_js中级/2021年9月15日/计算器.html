@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <style>
+        #div1 {
+            background-color: #09f;
+            width: 300px;
+            height: 80px;
+            margin: 60px auto;
+            text-align: center;
+            padding-top: 40px;
+            border-radius: 4px;
+        }
+
+        #t1,
+        #t2,
+        #t3 {
+            width: 60px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        #bt1 {
+            width: 50px;
+            height: 25px;
+            margin: 10px 0px 0px 180px;
+        }
+    </style>
+    <script src="js/addEvent.js"></script>
+    <script>
+        addEvent(window, "load", function () {
+            var t1 = document.getElementById("t1");
+            var t2 = document.getElementById("t2");
+            var t3 = document.getElementById("t3");
+            var bt1 = document.getElementById("bt1");
+
+
+            addEvent(bt1, "click", function () {
+                var reg = /[^0-9]/;
+                var t1Data = t1.value;
+                var t2Data = t2.value;
+                if (t1Data.search(reg) != -1 || t2Data.search(reg) != -1) {
+                    alert("操作数不能是非数字");
+                } else {
+                    t1Data = parseFloat(t1Data);
+                    t2Data = parseFloat(t2Data);
+                    t3.value = t1Data + t2Data;
+                }
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <input type="text" id="t1">+
+        <input type="text" id="t2">=
+        <input type="text" id="t3">
+        <br>
+        <input type="button" id="bt1" value="计算">
+    </div>
+</body>
+
+</html>

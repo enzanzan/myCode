@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //人类 Person 父类
+        //属性: 姓名 年龄 性别
+        //方法:吃
+        // 父类添加属性
+        function Person(name,age,sex,sno){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+            this.sno=sno;
+        }
+        // 父类添加方法
+        Person.prototype.eat=function(){
+            alert("吃出健康");
+        }
+
+        // 子类--Student
+        function Student(name,age,sex,sno,sdept){
+            // 子类继承父类的属性--call方法
+            Person.call(this,name,age,sex,sno);
+
+            // 子类添加自身属性
+            this.sdept=sdept;
+        }
+        // 原型拷贝 子类继承父类的方法
+        for(var i in Person.prototype){
+            Student.prototype[i]=Person.prototype[i];
+        }
+        // 子类添加自身的方法--如果父类有同名方法，子类的方法将覆盖父类同名的方法
+        Student.prototype.study=function(){
+            alert("持之以恒");
+        }
+        // 实例化一个Student类的实例
+        var s1=new Student("zanzan",20,"女","0213","信息");
+        console.log("s1",s1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
